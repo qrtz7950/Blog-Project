@@ -1,0 +1,49 @@
+-- web site 
+create table t_board(
+    no number(5) primary key
+    , title varchar2(2000) not null
+    , writer varchar2(200) not null
+    , content varchar2(4000) not null
+    , view_cnt number(5) default 0
+    , reg_date date default sysdate
+);
+-- t_board 테이블의 시퀀스
+create sequence seq_t_board_no ;
+
+insert into t_board(no, title, writer, content)
+  values(seq_t_board_no.nextval, '제목임', '나다', '내용이라');
+
+desc t_board;
+select * from t_board;
+
+desc t_member;
+
+select id, name,to_char(reg_date, 'yyyy-mm-dd') as reg_date
+  from t_member
+  order by reg_date desc;
+  
+  update t_member
+    set type = 'S'
+    where id='master' or id ='오늘은';
+
+
+-- 첨부파일과 관련된 테이블 생성
+create table t_board_file(
+    no number(5)     primary key
+    , board_no       number(5) not null
+    , file_ori_name  varchar2(200)
+    , file_save_name varchar2(200)
+    , file_size      number(10)
+    , constraint t_board_file_board_no_fk foreign key(board_no)
+         references t_board(no) on delete cascade
+);
+
+alter table t_board_file
+  drop constraint t_board_file_board_no_fk;
+
+alter table t_board_file
+  add constraint t_board_file_board_no_fk foreign key(board_no)
+        references t_board(no) on delete cascade;
+
+-- 첨부파일 시퀀스
+create sequence seq_t_board_file_no;
