@@ -4,3 +4,7 @@ Blog-Project/.settings/
 *.classpath
 *.project
 *.MF
+*.properties
+*.policy
+*.prefs
+Servers/
