@@ -12,8 +12,6 @@
 		font-size: 15pt;
 	}	
 	.firendSel{
-	
-		display: inline-block;
 		font-size: 15pt;
 		margin: 5px;
 	}	
@@ -25,37 +23,30 @@
 	<div class="container">
 	<jsp:include page="/jsp/include/topMenu.jsp" />
 		<main role="main">
+		<div align="center" style="margin: 15px;">
+          <h1 class="jumbotron-heading">블로그 환경설정</h1>
+		</div>
 	      <section class="jumbotron text-center">
-	        <div class="container">
-	          <h1 class="jumbotron-heading">친구 신청 현황</h1>
-	          <p class="lead text-muted">새로운 친구를 찾아보자</p>
+	          <h4>친구 신청 현황</h4><br>
 	          	<div class="firendSel">
-	          		새로운 친구 신청이 없습니다<br>
+	          		새로운 친구 신청이 없습니다
 	          	</div>
-	            <div class="firendSel">
-					<div class="firendReq"><b>김제희</b>님이</div>
-					<div class="firendReq"><b>곽병문</b>님에게 친구 신청하였습니다&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-					<div class="firendReq"><button type="button" class="btn btn-success">수락</button></div>
-					<div class="firendReq"><button type="button" class="btn btn-danger">거절</button></div>
-				</div>
-	            <div class="firendSel">
-					<div class="firendReq"><b>김제희</b>님이</div>
-					<div class="firendReq"><b>곽병문</b>님에게 친구 신청하였습니다&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-					<div class="firendReq"><button type="button" class="btn btn-success">수락</button></div>
-					<div class="firendReq"><button type="button" class="btn btn-danger">거절</button></div>
-				</div>
-	            <div class="firendSel">
-					<div class="firendReq"><b>김제희</b>님이</div>
-					<div class="firendReq"><b>곽병문</b>님에게 친구 신청하였습니다&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-					<div class="firendReq"><button type="button" class="btn btn-success">수락</button></div>
-					<div class="firendReq"><button type="button" class="btn btn-danger">거절</button></div>
-				</div>
-	        </div>
+	          		<div class="container" style="background: lightgray; width:50%;">
+			            <div>
+				            <div class="firendSel">
+								<div class="firendReq"><b>김제희</b>님이</div>
+								<div class="firendReq"><b>곽병문</b>님에게 친구 신청하였습니다</div>
+							</div>
+								<div>
+									<button type="button" class="btn btn-success">수락</button>
+									<button type="button" class="btn btn-danger">거절</button>
+								</div>
+						</div>
 	      </section>
 	
-	      <div class="album py-5 bg-light">
-	        <div class="container">
-	
+			<section class="jumbotron text-center">
+				<h4>블로그 테마 선택</h4>
+				<br><br>
 	          <div class="row">
 		            <div class="col-md-4">
 		              <div class="card mb-4 shadow-sm">
@@ -86,11 +77,8 @@
 	            <div align="center">
 		            <button type="button" class="btn btn-secondary btn-lg">선택</button>
 	            </div>
-	            
-	          </div>
-	        </div>
-	      </div>
+            </section>
 	    </main>
-	</div>
+      </div>
 </body>
 </html>
