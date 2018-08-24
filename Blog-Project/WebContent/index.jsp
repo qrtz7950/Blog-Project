@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Blog Template for Bootstrap</title>
     
+    
+    
  <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- 글꼴 -->
@@ -32,7 +34,7 @@
     <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="blog.css" rel="stylesheet">
+   <!--  <link href="blog.css" rel="stylesheet"> -->
   </head>
 
   <body>
@@ -230,12 +232,17 @@
 					<li><a href="#">Facebook</a></li>
 				</ol>
 			</div>
+		
+			
+			
+			
+			<h4 class="font-italic">서울 중기 예보</h4>
 			<div id="weather">
-				<h4 class="font-italic">
-					서울 중기 예보
-				</h4>
-					<jsp:include page="/jsp/weather/weather.jsp" flush="true"/>
 			</div>
+			<jsp:include page="/jsp/weather/weather.jsp" flush="true"/>	
+				
+			
+			
 		</aside>
 		<!-- /.blog-sidebar -->
 
@@ -259,22 +266,23 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
 	    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>                                                                                        
 	    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>                                                                                                                      
-	    <script src="/Blog-Project/js/bootstrap.min.js"></script>                                                                                                                                                     
+	   <!--  <script src="/Blog-Project/js/bootstrap.min.js"></script>                                                                                                                                                     
 	    <script src="/Blog-Project/js/bootstrap.js"></script>                                                                                                                                                         
-	    <script src="/Blog-Project/js/npm.js"></script>                                                                                                                                                               
+	    <script src="/Blog-Project/js/npm.js"></script>       -->                                                                                                                                                         
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->                                                                                                                                  
 		<script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>                                                                                                                            
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="jquery.ajax-cross-origin.min.js"></script><!-- 크로스도메인 해결 플러그인 -->                                                                                                                       
-	
-    <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"/></script>
+        <!-- <script type="text/javascript" src="jquery.ajax-cross-origin.min.js"></script>크로스도메인 해결 플러그인    -->                                                                                                                    
+		
+
+   <!--  <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"/></script> -->
     <script>
-      Holder.addTheme('thumb', {
+      /* Holder.addTheme('thumb', {
         bg: '#55595c',
         fg: '#eceeef',
         text: 'Thumbnail'
-      });
+      }); */
     WebFont.load({
         google: {
           families: ['Droid Sans', 'Droid Serif']
@@ -282,9 +290,6 @@
       });
       
     </script>
-    
-    
-    
     
     
   </body>
