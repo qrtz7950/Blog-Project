@@ -22,9 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { "*.do" }, 
 		initParams = { 
 				@WebInitParam(name = "controllers", 
-							  value = "kr.co.mlec.board.control.BoardController" + 
-									  "|kr.co.mlec.login.control.LoginController" +
-									  "|kr.co.mlec.member.control.MemberController")
+							  value = "kr.co.mlec.board.control.BoardController") 
 		})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,6 +35,7 @@ public class DispatcherServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		
 		String ctrlNames = config.getInitParameter("controllers");
+		
 		try {
 			mappings = new HandlerMapping(ctrlNames);
 		} catch(Exception e) {

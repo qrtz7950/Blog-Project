@@ -5,6 +5,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+import kr.co.mlec.board.dao.BoardDAO;
+import kr.co.mlec.board.service.BoardService;
+
 /**
  * Application Lifecycle Listener implementation class ContextListener
  *
@@ -24,14 +27,13 @@ public class ContextListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent event)  { 
-         // TODO Auto-generated method stub
     	System.out.println("리스너 시작");
     	
     	ServletContext sc = event.getServletContext();
     	
-//    	sc.setAttribute("boardDAO", new BoardDAO());
-//    	BoardDAO boardDao = new BoardDAO();
-//    	sc.setAttribute("boardService", new BoardService(boardDao));
+    	sc.setAttribute("boardDAO", new BoardDAO());
+    	BoardDAO boardDao = new BoardDAO();
+    	sc.setAttribute("boardService", new BoardService(boardDao));
 //    	
 //    	LoginDAO loginDao = new LoginDAO();
 //    	LoginService loginService = new LoginService(loginDao);
