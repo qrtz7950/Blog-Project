@@ -10,11 +10,11 @@
 		<description>기상청 날씨 웹서비스</description>
 		<language>ko</language>
 		<generator>기상청</generator>
-		<pubDate>2018년 08월 23일 (목)요일 18:00</pubDate>
+		<pubDate>2018년 08월 24일 (금)요일 06:00</pubDate>
 		<item>
 			<author>기상청</author>
 			<category>육상중기예보</category>
-			<title>전국 육상 중기예보 - 2018년 08월 23일 (목)요일 18:00 발표</title>
+			<title>전국 육상 중기예보 - 2018년 08월 24일 (금)요일 06:00 발표</title>
 			<link>
 				http://www.kma.go.kr/weather/forecast/mid-term_01.jsp
 			</link>
@@ -24,10 +24,10 @@
 			<description>
 				<header>
 					<title>전국 육상중기예보</title>
-					<tm>201808231800</tm>
+					<tm>201808240600</tm>
 					<wf>
 <![CDATA[
-기압골의 영향으로 제주도는 26~28일, 충청도와 남부지방은 27~28일에 비가 오겠고, 그 밖의 날은 북태평양고기압의 가장자리에 들어 구름이 많겠습니다.<br />기온은 평년(최저기온: 17~23℃, 최고기온: 25~30℃)보다 높겠습니다.<br />강수량은 평년(5~19mm)보다 제주도와 남부지방, 충청도는 많겠으나, 그 밖의 지역은 적겠습니다. <br /><br />* 내륙을 중심으로 주의보 수준의 폭염이 나타나는 곳이 있겠고, 밤에는 열대야가 나타나는 곳도 있겠으니, 건강관리와 농수축산물 관리에 유의하기 바랍니다.
+기압골의 영향으로 27일은 전국, 28일은 충청도와 남부지방, 제주도에 비가 오겠습니다. 그 밖의 날은 북태평양고기압의 가장자리에 들어 구름이 많겠습니다.<br />기온은 평년(최저기온: 16~23℃, 최고기온: 25~30℃)보다 높겠습니다.<br />강수량은 평년(5~19mm)보다 많겠습니다.
 ]]>
 					</wf>
 				</header>
@@ -37,34 +37,18 @@
 						<city>서울</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
-							<tmx>32</tmx>
-							<reliability>낮음</reliability>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
 							<tmEf>2018-08-27 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
-							<tmx>32</tmx>
+							<tmx>30</tmx>
 							<reliability>낮음</reliability>
 						</data>
 						<data>
@@ -72,7 +56,7 @@
 							<tmEf>2018-08-28 00:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
-							<tmx>33</tmx>
+							<tmx>32</tmx>
 							<reliability>낮음</reliability>
 						</data>
 						<data>
@@ -80,7 +64,7 @@
 							<tmEf>2018-08-28 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
-							<tmx>33</tmx>
+							<tmx>32</tmx>
 							<reliability>낮음</reliability>
 						</data>
 						<data>
@@ -116,8 +100,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>32</tmx>
@@ -137,6 +129,14 @@
 							<wf>구름조금</wf>
 							<tmn>24</tmn>
 							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>31</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -145,34 +145,18 @@
 						<city>인천</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
+							<tmx>29</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
 							<tmEf>2018-08-27 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
-							<tmx>31</tmx>
+							<tmx>29</tmx>
 							<reliability>낮음</reliability>
 						</data>
 						<data>
@@ -224,8 +208,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>32</tmx>
@@ -243,8 +235,16 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
-							<tmn>22</tmn>
+							<tmn>23</tmn>
 							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>30</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -253,34 +253,18 @@
 						<city>수원</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
-							<tmx>32</tmx>
-							<reliability>낮음</reliability>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
 							<tmEf>2018-08-27 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
-							<tmx>32</tmx>
+							<tmx>30</tmx>
 							<reliability>낮음</reliability>
 						</data>
 						<data>
@@ -332,8 +316,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>33</tmx>
@@ -352,6 +344,14 @@
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
 							<tmn>22</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
 							<tmx>31</tmx>
 							<reliability>보통</reliability>
 						</data>
@@ -361,34 +361,18 @@
 						<city>파주</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>21</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>21</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>22</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
+							<tmx>29</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
 							<tmEf>2018-08-27 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>22</tmn>
-							<tmx>31</tmx>
+							<tmx>29</tmx>
 							<reliability>낮음</reliability>
 						</data>
 						<data>
@@ -440,8 +424,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>22</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>22</tmn>
 							<tmx>32</tmx>
@@ -460,7 +452,15 @@
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
 							<tmn>20</tmn>
-							<tmx>31</tmx>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>21</tmn>
+							<tmx>30</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -469,35 +469,19 @@
 						<city>춘천</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
 							<tmEf>2018-08-27 12:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
@@ -548,8 +532,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>32</tmx>
@@ -567,6 +559,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>23</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>31</tmx>
 							<reliability>보통</reliability>
@@ -577,35 +577,19 @@
 						<city>원주</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
 							<tmEf>2018-08-27 12:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
@@ -656,8 +640,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>32</tmx>
@@ -675,6 +667,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>23</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>31</tmx>
 							<reliability>보통</reliability>
@@ -685,35 +685,19 @@
 						<city>강릉</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
+							<tmx>29</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
 							<tmEf>2018-08-27 12:00</tmEf>
-							<wf>구름많음</wf>
+							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
+							<tmx>29</tmx>
+							<reliability>보통</reliability>
 						</data>
 						<data>
 							<mode>A02</mode>
@@ -764,8 +748,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>29</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>29</tmx>
@@ -783,6 +775,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>24</tmn>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>30</tmx>
 							<reliability>보통</reliability>
@@ -793,22 +793,6 @@
 						<city>대전</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
@@ -872,8 +856,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>31</tmx>
@@ -893,6 +885,14 @@
 							<wf>구름조금</wf>
 							<tmn>23</tmn>
 							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>22</tmn>
+							<tmx>30</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -901,22 +901,6 @@
 						<city>세종</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
@@ -980,8 +964,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>31</tmx>
@@ -1001,6 +993,14 @@
 							<wf>구름조금</wf>
 							<tmn>22</tmn>
 							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>22</tmn>
+							<tmx>30</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -1009,22 +1009,6 @@
 						<city>홍성</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>32</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>22</tmn>
@@ -1088,8 +1072,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>22</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>22</tmn>
 							<tmx>31</tmx>
@@ -1109,6 +1101,14 @@
 							<wf>구름조금</wf>
 							<tmn>21</tmn>
 							<tmx>30</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>21</tmn>
+							<tmx>29</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -1117,22 +1117,6 @@
 						<city>청주</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
@@ -1196,8 +1180,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>33</tmx>
@@ -1217,6 +1209,14 @@
 							<wf>구름조금</wf>
 							<tmn>24</tmn>
 							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>32</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -1225,22 +1225,6 @@
 						<city>광주</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
@@ -1304,8 +1288,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>25</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>32</tmx>
@@ -1323,6 +1315,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>25</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>33</tmx>
 							<reliability>보통</reliability>
@@ -1333,22 +1333,6 @@
 						<city>목포</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
@@ -1412,8 +1396,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>25</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>31</tmx>
@@ -1431,6 +1423,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>25</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>32</tmx>
 							<reliability>보통</reliability>
@@ -1441,22 +1441,6 @@
 						<city>여수</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>25</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>25</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
@@ -1520,8 +1504,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>25</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>31</tmx>
@@ -1539,6 +1531,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>25</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>32</tmx>
 							<reliability>보통</reliability>
@@ -1549,22 +1549,6 @@
 						<city>전주</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
@@ -1628,8 +1612,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>33</tmx>
@@ -1649,6 +1641,14 @@
 							<wf>구름조금</wf>
 							<tmn>24</tmn>
 							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>32</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -1657,22 +1657,6 @@
 						<city>군산</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
@@ -1736,8 +1720,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>31</tmx>
@@ -1755,6 +1747,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>22</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>22</tmn>
 							<tmx>31</tmx>
 							<reliability>보통</reliability>
@@ -1765,26 +1765,10 @@
 						<city>부산</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>25</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>25</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
-							<tmx>30</tmx>
+							<tmx>29</tmx>
 							<reliability>보통</reliability>
 						</data>
 						<data>
@@ -1792,7 +1776,7 @@
 							<tmEf>2018-08-27 12:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
-							<tmx>30</tmx>
+							<tmx>29</tmx>
 							<reliability>보통</reliability>
 						</data>
 						<data>
@@ -1844,8 +1828,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>31</tmx>
@@ -1863,6 +1855,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>24</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>31</tmx>
 							<reliability>보통</reliability>
@@ -1873,26 +1873,10 @@
 						<city>울산</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>30</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
-							<tmx>30</tmx>
+							<tmx>29</tmx>
 							<reliability>보통</reliability>
 						</data>
 						<data>
@@ -1900,7 +1884,7 @@
 							<tmEf>2018-08-27 12:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
-							<tmx>30</tmx>
+							<tmx>29</tmx>
 							<reliability>보통</reliability>
 						</data>
 						<data>
@@ -1952,8 +1936,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>31</tmx>
@@ -1975,32 +1967,24 @@
 							<tmx>31</tmx>
 							<reliability>보통</reliability>
 						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
 					</location>
 					<location wl_ver="3">
 						<province>부산ㆍ울산ㆍ경상남도</province>
 						<city>창원</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>낮음</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
-							<tmx>31</tmx>
+							<tmx>30</tmx>
 							<reliability>보통</reliability>
 						</data>
 						<data>
@@ -2008,7 +1992,7 @@
 							<tmEf>2018-08-27 12:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>24</tmn>
-							<tmx>31</tmx>
+							<tmx>30</tmx>
 							<reliability>보통</reliability>
 						</data>
 						<data>
@@ -2060,8 +2044,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>32</tmx>
@@ -2079,6 +2071,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>23</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>32</tmx>
 							<reliability>보통</reliability>
@@ -2089,22 +2089,6 @@
 						<city>대구</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
@@ -2168,8 +2152,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>33</tmx>
@@ -2187,6 +2179,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>24</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>33</tmx>
 							<reliability>보통</reliability>
@@ -2197,22 +2197,6 @@
 						<city>안동</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>23</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>23</tmn>
@@ -2276,8 +2260,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>23</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>33</tmx>
@@ -2295,6 +2287,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>23</tmn>
+							<tmx>33</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>23</tmn>
 							<tmx>33</tmx>
 							<reliability>보통</reliability>
@@ -2305,22 +2305,6 @@
 						<city>포항</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많음</wf>
-							<tmn>24</tmn>
-							<tmx>31</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
@@ -2384,8 +2368,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>24</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>32</tmx>
@@ -2403,6 +2395,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>24</tmn>
+							<tmx>32</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>24</tmn>
 							<tmx>32</tmx>
 							<reliability>보통</reliability>
@@ -2413,22 +2413,6 @@
 						<city>제주</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많고 비</wf>
-							<tmn>26</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많고 비</wf>
-							<tmn>26</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
@@ -2492,8 +2476,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>25</tmn>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>30</tmx>
@@ -2513,6 +2505,14 @@
 							<wf>구름조금</wf>
 							<tmn>25</tmn>
 							<tmx>30</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>25</tmn>
+							<tmx>29</tmx>
 							<reliability>보통</reliability>
 						</data>
 					</location>
@@ -2521,22 +2521,6 @@
 						<city>서귀포</city>
 						<data>
 							<mode>A02</mode>
-							<tmEf>2018-08-26 00:00</tmEf>
-							<wf>구름많고 비</wf>
-							<tmn>26</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
-							<tmEf>2018-08-26 12:00</tmEf>
-							<wf>구름많고 비</wf>
-							<tmn>26</tmn>
-							<tmx>30</tmx>
-							<reliability>보통</reliability>
-						</data>
-						<data>
-							<mode>A02</mode>
 							<tmEf>2018-08-27 00:00</tmEf>
 							<wf>구름많고 비</wf>
 							<tmn>25</tmn>
@@ -2600,8 +2584,16 @@
 							<reliability>보통</reliability>
 						</data>
 						<data>
-							<mode>A01</mode>
+							<mode>A02</mode>
 							<tmEf>2018-08-31 00:00</tmEf>
+							<wf>구름많음</wf>
+							<tmn>25</tmn>
+							<tmx>31</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A02</mode>
+							<tmEf>2018-08-31 12:00</tmEf>
 							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>31</tmx>
@@ -2619,6 +2611,14 @@
 							<mode>A01</mode>
 							<tmEf>2018-09-02 00:00</tmEf>
 							<wf>구름조금</wf>
+							<tmn>25</tmn>
+							<tmx>30</tmx>
+							<reliability>보통</reliability>
+						</data>
+						<data>
+							<mode>A01</mode>
+							<tmEf>2018-09-03 00:00</tmEf>
+							<wf>구름많음</wf>
 							<tmn>25</tmn>
 							<tmx>30</tmx>
 							<reliability>보통</reliability>

@@ -19,10 +19,10 @@
                     $(response).find('location').each(function(){
                         var city = $(this).find('city').text();
                         if(city == '서울'){
-                            $('body').append(city + '<br>');
+                            $('aside').append(city + '<br>');
                             $(this).find('data').each(function(){
                                 var output = $(this).find('tmEf').text() + " " + $(this).find('wf').text();
-                                $('body').append(output + '<br>');
+                                $('aside').append(output + '<br>');
                             })
                         }
                     })
