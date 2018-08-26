@@ -1,28 +1,33 @@
 package kr.co.mlec.board.vo;
 
+/**
+ * @author rlawp
+ *
+ */
 public class BoardVO {
 
 	private String id;
 	private int board_no;
-	private int view_cnt;
+	private String category_name;
 	private String title;
 	private String content;
-	private String category_name;
+	private String tag;
+	private int view_cnt;
 	private int like_cnt;
 	private String reg_date;
 
 	public BoardVO() {
 	}
-
-	public BoardVO(String id, int board_no, int view_cnt, String title, String content, String category_name,
-			int like_cnt, String reg_date) {
-		super();
+	
+	public BoardVO(String id, int board_no, String category_name, String title, String content, String tag,
+			int view_cnt, int like_cnt, String reg_date) {
 		this.id = id;
 		this.board_no = board_no;
-		this.view_cnt = view_cnt;
+		this.category_name = category_name;
 		this.title = title;
 		this.content = content;
-		this.category_name = category_name;
+		this.tag = tag;
+		this.view_cnt = view_cnt;
 		this.like_cnt = like_cnt;
 		this.reg_date = reg_date;
 	}
@@ -43,12 +48,12 @@ public class BoardVO {
 		this.board_no = board_no;
 	}
 
-	public int getView_cnt() {
-		return view_cnt;
+	public String getCategory_name() {
+		return category_name;
 	}
 
-	public void setView_cnt(int view_cnt) {
-		this.view_cnt = view_cnt;
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
 	}
 
 	public String getTitle() {
@@ -67,12 +72,20 @@ public class BoardVO {
 		this.content = content;
 	}
 
-	public String getCategory_name() {
-		return category_name;
+	public String getTag() {
+		return tag;
 	}
 
-	public void setCategory_name(String category_name) {
-		this.category_name = category_name;
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public int getView_cnt() {
+		return view_cnt;
+	}
+
+	public void setView_cnt(int view_cnt) {
+		this.view_cnt = view_cnt;
 	}
 
 	public int getLike_cnt() {
@@ -93,9 +106,9 @@ public class BoardVO {
 
 	@Override
 	public String toString() {
-		return "BoardVO [id=" + id + ", board_no=" + board_no + ", view_cnt=" + view_cnt + ", title=" + title
-				+ ", content=" + content + ", category_name=" + category_name + ", like_cnt=" + like_cnt + ", reg_date="
-				+ reg_date + "]";
+		return "BoardVO [id=" + id + ", board_no=" + board_no + ", category_name=" + category_name + ", title=" + title
+				+ ", content=" + content + ", tag=" + tag + ", view_cnt=" + view_cnt + ", like_cnt=" + like_cnt
+				+ ", reg_date=" + reg_date + "]";
 	}
 	
 }

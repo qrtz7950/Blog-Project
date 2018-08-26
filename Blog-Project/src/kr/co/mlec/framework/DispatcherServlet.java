@@ -50,7 +50,7 @@ public class DispatcherServlet extends HttpServlet {
 
 		String uri = request.getRequestURI();
 		uri = uri.substring(request.getContextPath().length());
-//		System.out.println("요청 uri : " + uri);
+		System.out.println("요청 uri : " + uri);
 		
 		String view ="";
 		try {

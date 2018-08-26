@@ -15,7 +15,7 @@ public class BoardService {
 	public void write(BoardVO board) {
 		dao.write(board); 
 	}
-	
+	  
 //	public List<BoardVO> selectAll() {
 //		return dao.selectAll();
 //	}

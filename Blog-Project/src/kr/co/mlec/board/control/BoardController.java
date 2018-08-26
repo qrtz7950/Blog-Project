@@ -17,24 +17,38 @@ public class BoardController extends HttpServlet {
 	@RequestMapping("/writeForm.do")
 	public ModelAndView write(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		System.out.println("wirte() 호출...");
+		
+		ModelAndView mav = new ModelAndView("/jsp/blog/writeForm.jsp");
+		
+		return mav;
+	}
+	
+	@RequestMapping("/write.do")
+	public ModelAndView writeProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		System.out.println("wirteProcess() 호출...");
+		
 		BoardVO board = new BoardVO();
 		
 		String id = request.getParameter("id");
+		String category_name = request.getParameter("category_name");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		String category_name = request.getParameter("category");
-
+		String tag = request.getParameter("tag");
+		
 		board.setId(id);
+		board.setCategory_name(category_name);
 		board.setTitle(title);
 		board.setContent(content);
-		board.setCategory_name(category_name);
+		board.setTag(tag);
 		
 		ServletContext sc = request.getServletContext();
 		BoardService service = (BoardService) sc.getAttribute("boardService");
 		service.write(board);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setView("/list.do");
+		mav.setView(request.getContextPath());
 		
 		return mav;
 	}

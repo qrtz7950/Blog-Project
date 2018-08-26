@@ -20,47 +20,31 @@ public class BoardDAO {
 	
 	public void write(BoardVO board) {
 		
-		
-		//////////////////////////DAO 메소드 고쳐야됨////////////////////////////////////
-		
 		try {
 			conn = ConnectionFactory.getConnection();
 			
 			sql = new StringBuilder();
-			sql.append("select no, title, writer, to_char(reg_date, 'yyyy-mm-dd') as reg_date ");
-			sql.append("	from t_board ");
-			sql.append("   order by no desc ");
+			sql.append("insert into b_board(id, board_no, title, content, category_name, tag) ");
+			sql.append("			values ( ?, seq_board_no.nextval, ?, ?, ?) ");
 
-			
-			
 			pstmt = conn.prepareStatement(sql.toString());
 			
-			ResultSet rs = pstmt.executeQuery();
+			int loc = 1;
 
-			boardList = new ArrayList<>();
+			pstmt.setString(loc++, board.getId());
+			pstmt.setString(loc++, board.getTitle());
+			pstmt.setString(loc++, board.getContent());
+			pstmt.setString(loc++, board.getCategory_name());
+			pstmt.setString(loc++, board.getTag());
 			
-			while(rs.next()){
-				int no			 = rs.getInt("no");
-				String title 	 = rs.getString("title");
-				String writer	 = rs.getString("writer");
-				String reg_date  = rs.getString("reg_date");
-				
-				BoardVO board = new BoardVO();
-				
-				board.setNo(no);
-				board.setTitle(title);
-				board.setWriter(writer);
-				board.setRegDate(reg_date);
-				
-				boardList.add(board);
-			}
+			pstmt.executeUpdate();
+
 		} catch (Exception e) {
 			
 		} finally {
 			JDBCClose.close(conn, pstmt);
 		}
 		
-		return boardList;
 	}
-	}
+
 }

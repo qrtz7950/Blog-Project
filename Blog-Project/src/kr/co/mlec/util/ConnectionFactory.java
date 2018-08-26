@@ -16,8 +16,6 @@ public class ConnectionFactory {
 		
 		Connection conn = DriverManager.getConnection(url, user, password);
 		
-		
-		
 		return conn;
 	}
 }
