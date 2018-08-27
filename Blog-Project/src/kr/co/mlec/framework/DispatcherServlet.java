@@ -22,9 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { "*.do" }, 
 		initParams = { 
 				@WebInitParam(name = "controllers", 
-							  value = "kr.co.mlec.board.control.BlogBoardController" + 
-									  "|kr.co.mlec.login.control.LoginController" +
-									  "|kr.co.mlec.member.control.MemberController")
+							  value = "kr.co.mlec.blogBoard.control.BlogBoardController")
 		})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
