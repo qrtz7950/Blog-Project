@@ -129,12 +129,21 @@ insert into blog(id, blog_no) values('bmkwak22', seq_blog_no.nextval);
 
 select id, board_no, title, content, tag, category_name, view_cnt, like_cnt, reg_date from b_board;
 
+<<<<<<< HEAD
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'¾È³ç', 'ÇÏ¼¼¿ä', '#¸Å¿ö¸Å¿ö','Àâ´ã');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'³Êµµ', '¾È³ç', '#¸Å¿ö¸Å¿ö','Àâ´ã');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'³ªµµ', '¾È³ç', '#¸Å¿ö¸Å¿ö','Àâ´ã');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'³ç¾È', 'ÇÏÇÏ', '#¸Å¿ö¸Å¿ö','Àâ´ã');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'¾È³ç', 'È£È£', '#¸Å¿ö¸Å¿ö','Àâ´ã');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'³ç¾È', 'È÷È÷', '#¸Å¿ö¸Å¿ö','Àâ´ã');
+=======
 insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'ì•ˆë…•', 'í•˜ì„¸ìš”', '#ë§¤ì›Œë§¤ì›Œ','ìž¡ë‹´');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'ë„ˆë„', 'ì•ˆë…•', '#ë§¤ì›Œë§¤ì›Œ','ìž¡ë‹´');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'ë‚˜ë„', 'ì•ˆë…•', '#ë§¤ì›Œë§¤ì›Œ','ìž¡ë‹´');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'ë…•ì•ˆ', 'í•˜í•˜', '#ë§¤ì›Œë§¤ì›Œ','ìž¡ë‹´');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'ì•ˆë…•', 'í˜¸í˜¸', '#ë§¤ì›Œë§¤ì›Œ','ìž¡ë‹´');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'ë…•ì•ˆ', 'ížˆížˆ', '#ë§¤ì›Œë§¤ì›Œ','ìž¡ë‹´');
+>>>>>>> origin/master
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_category ----------------------------------------------
@@ -142,6 +151,20 @@ insert into b_board(id, board_no, title, content, tag, category_name) values ('b
 
 select category_no, id, category_name, depth, parent from board_category;
 
+<<<<<<< HEAD
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', 'Àâ´ã', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', 'ÀÏ»ó', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '»ç°Ç', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', 'Ä«Å×°í¸®', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', 'Àâ´ã', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', 'ÀÏ»ó', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', '»ç°Ç', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', 'Ä«Å×°í¸®', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', 'Àâ´ã', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', 'ÀÏ»ó', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', '»ç°Ç', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', 'Ä«Å×°í¸®', 0);
+=======
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', 'ìž¡ë‹´', 0);
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', 'ì¼ìƒ', 0);
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', 'ì‚¬ê±´', 0);
@@ -154,6 +177,7 @@ insert into board_category(category_no, id, category_name, depth) values(seq_boa
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', 'ì¼ìƒ', 0);
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', 'ì‚¬ê±´', 0);
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', 'ì¹´í…Œê³ ë¦¬', 0);
+>>>>>>> origin/master
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_reply -------------------------------------------------
@@ -161,6 +185,17 @@ insert into board_category(category_no, id, category_name, depth) values(seq_boa
 
 select reply_no, board_no, id, content, depth, parent, reg_date from reply;
 
+<<<<<<< HEAD
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 2, 'bmkwak22', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 2, 'bmkwak22', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 2, 'bmkwak22', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 3, 'asrbtjd', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 3, 'asrbtjd', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 3, 'asrbtjd', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿', 0);
+=======
 insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…', 0);
 insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…', 0);
 insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…', 0);
@@ -170,6 +205,7 @@ insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.ne
 insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 3, 'asrbtjd', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…', 0);
 insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 3, 'asrbtjd', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…', 0);
 insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 3, 'asrbtjd', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…', 0);
+>>>>>>> origin/master
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- friend -----------------------------------------------------

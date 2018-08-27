@@ -22,9 +22,12 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { "*.do" }, 
 		initParams = { 
 				@WebInitParam(name = "controllers", 
-							  value = "kr.co.mlec.board.control.BoardController" + 
-									  "|kr.co.mlec.login.control.LoginController" +
-									  "|kr.co.mlec.member.control.MemberController")
+<<<<<<< HEAD
+							  value = "kr.co.mlec.board.control.BoardController") 
+=======
+							  value = "kr.co.mlec.blogBoard.control.BlogBoardController"
+							  		+ "|kr.co.mlec.login.control.LoginController")
+>>>>>>> origin/Ddock2
 		})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,6 +40,7 @@ public class DispatcherServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		
 		String ctrlNames = config.getInitParameter("controllers");
+		
 		try {
 			mappings = new HandlerMapping(ctrlNames);
 		} catch(Exception e) {
@@ -51,7 +55,7 @@ public class DispatcherServlet extends HttpServlet {
 
 		String uri = request.getRequestURI();
 		uri = uri.substring(request.getContextPath().length());
-//		System.out.println("요청 uri : " + uri);
+		System.out.println("요청 uri : " + uri);
 		
 		String view ="";
 		try {
