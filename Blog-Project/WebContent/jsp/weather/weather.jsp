@@ -10,7 +10,8 @@
         <!-- <script type="text/javascript" src="jquery.ajax-cross-origin.min.js"></script>크로스도메인 해결 플러그인 -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script type="text/javascript">
-        $(document).ready(function(){  
+        $(document).ready(function(){
+       		$('#f5').click(function(){
        			$.ajax({
    	             crossOrigin: true,    // 크로스도메인 해결 플러그인
    	             url: 'http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108',

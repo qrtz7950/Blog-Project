@@ -4,3 +4,5 @@ Blog-Project/.settings/
 *.classpath
 *.project
 *.MF
+*.class
+.recommenders/
