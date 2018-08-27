@@ -14,18 +14,18 @@
 		<a style="font-size: 30pt;" >???의 Blog</a>
 	</div>
 	<div align="right">
-		<%-- <c:choose>
-			<c:when test="${empty userVO}"}> --%>
-				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}'">로그인</button>
+		<c:choose>
+			<c:when test="${empty userVO}">
+				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/loginForm.do'">로그인</button>
 				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/member/signUp.do'">회원가입</button>
-			<%-- </c:when> --%>
-			<%-- <c:otherwise> --%>
-				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}'">로그아웃</button>
-			<%-- </c:otherwise>
-		</c:choose> --%>
+			</c:when>
+			<c:otherwise>
+				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
+			</c:otherwise>
+		</c:choose>
 		<br>
 		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}'" style="margin-top: 10px; margin-bottom: 10px">글쓰기</button>
-		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
+		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>		
 	</div>
 </div>
 <div style="background-color: #6B747C;">

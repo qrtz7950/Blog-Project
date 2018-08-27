@@ -20,8 +20,8 @@ public class BlogBoardController {
 		ServletContext sc = request.getServletContext();
 		
 		BlogBoardService service = (BlogBoardService) sc.getAttribute("blogBoardService");
-		// @@@@@@@@@@@오류일지도 모름
-		BlogBoardVO detailBlogBoard = service.selectDetailBlogBoard(Integer.parseInt(request.getParameter("no")));
+		
+		BlogBoardVO detailBlogBoard = service.selectDetailBlogBoard(Integer.parseInt(request.getParameter("board_no")));
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/detailBlogBoard.jsp");

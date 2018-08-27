@@ -22,7 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { "*.do" }, 
 		initParams = { 
 				@WebInitParam(name = "controllers", 
-							  value = "kr.co.mlec.blogBoard.control.BlogBoardController")
+							  value = "kr.co.mlec.blogBoard.control.BlogBoardController"
+							  		+ "|kr.co.mlec.login.control.LoginController")
 		})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,6 +38,7 @@ public class DispatcherServlet extends HttpServlet {
 		String ctrlNames = config.getInitParameter("controllers");
 		try {
 			mappings = new HandlerMapping(ctrlNames);
+			System.out.println(ctrlNames);
 		} catch(Exception e) {
 			throw new ServletException(e);
 		}
@@ -61,6 +63,8 @@ public class DispatcherServlet extends HttpServlet {
 			
 			Object target = cam.getTarget();
 			Method method = cam.getMethod();
+			System.out.println(target);
+			System.out.println(method);
 			
 			ModelAndView mav = (ModelAndView) method.invoke(target, request, response);
 			
@@ -77,9 +81,11 @@ public class DispatcherServlet extends HttpServlet {
 		} catch (Exception e) {
 //			e.printStackTrace();
 			request.setAttribute("exception", e);
+			System.out.println(e);
 			view = "/jsp/error/error.jsp";
 //			view = "/error";
 		}
+		
 		
 		// 2. 해당 jsp로 이동
 		if(view.startsWith("redirect:")) {
