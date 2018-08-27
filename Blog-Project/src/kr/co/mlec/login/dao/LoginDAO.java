@@ -13,9 +13,9 @@ public class LoginDAO {
 		LoginVO userVO = null;
 		
 		StringBuilder sql = new StringBuilder();
-		sql.append("select id, pw ");
+		sql.append("select id, password ");
 		sql.append("  from b_member ");
-		sql.append("  where id = ? and pw = ? ");
+		sql.append("  where id = ? and password = ? ");
 		
 		try(
 				Connection conn = ConnectionFactory.getConnection();
@@ -30,7 +30,7 @@ public class LoginDAO {
 			if(rs.next()) {
 				userVO = new LoginVO();
 				userVO.setId(rs.getString("id"));
-				userVO.setPw(rs.getString("pw"));
+				userVO.setPw(rs.getString("password"));
 			}
 			
 		}catch(Exception e) {
