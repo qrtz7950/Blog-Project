@@ -4,5 +4,12 @@ Blog-Project/.settings/
 *.classpath
 *.project
 *.MF
+<<<<<<< HEAD
 *.class
+=======
+*.properties
+*.policy
+*.prefs
+Servers/
+>>>>>>> kjh
 .recommenders/
