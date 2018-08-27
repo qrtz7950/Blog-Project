@@ -1,13 +1,4 @@
-/.metadata/
-RemoteSystemsTempFiles/
+.metadata/
 Blog-Project/.settings/
-*.classpath
-*.project
+RemoteSystemsTempFiles/
 *.MF
-*.properties
-*.policy
-*.prefs
-Servers/
-*.class
-.recommenders/
-Servers2/
