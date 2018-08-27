@@ -8,3 +8,5 @@ Blog-Project/.settings/
 *.policy
 *.prefs
 Servers/
+*.class
+.recommenders/
