@@ -48,7 +48,7 @@ public class BoardController extends HttpServlet {
 		service.write(board);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setView(request.getContextPath());
+		mav.setView("/jsp/blog/write.jsp");
 		
 		return mav;
 	}
