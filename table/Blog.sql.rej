@@ -1,0 +1,23 @@
+diff a/table/Blog.sql b/table/Blog.sql	(rejected hunks)
+@@ -129,12 +129,21 @@
+ 
+ select id, board_no, title, content, tag, category_name, view_cnt, like_cnt, reg_date from b_board;
+ 
++<<<<<<< HEAD
+ insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'�ȳ�', '�ϼ���', '#�ſ��ſ�','���');
+ insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'�ʵ�', '�ȳ�', '#�ſ��ſ�','���');
+ insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'����', '�ȳ�', '#�ſ��ſ�','���');
+ insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'���', '����', '#�ſ��ſ�','���');
+ insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'�ȳ�', 'ȣȣ', '#�ſ��ſ�','���');
+ insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'���', '����', '#�ſ��ſ�','���');
++=======
++insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'안녕', '하세요', '#매워매워','잡담');
++insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'너도', '안녕', '#매워매워','잡담');
++insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'나도', '안녕', '#매워매워','잡담');
++insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'녕안', '하하', '#매워매워','잡담');
++insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'안녕', '호호', '#매워매워','잡담');
++insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'녕안', '히히', '#매워매워','잡담');
++>>>>>>> origin/master
+ 
+ -----------------------------------------------------------------------------------------------
+ --------------------------------- board_category ----------------------------------------------
