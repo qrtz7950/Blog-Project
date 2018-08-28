@@ -129,10 +129,10 @@ insert into blog(id, blog_no) values('bmkwak22', seq_blog_no.nextval);
 
 select id, board_no, view_cnt, title, content, category_name, like_cnt, reg_date from b_board;
 
-insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'안녕', '하세요', '잡담');
+insert into b_board(id, board_no, title, content, category_name) values ('qrtz7950', seq_board_no.nextval,'안녕', '하세요', '잡담');
 insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '잡담');
-insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'안녕', '하세요', '잡담');
-insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'안녕', '하세요', '잡담');
+insert into b_board(id, board_no, title, content, category_name) values ('qrtz7950', seq_board_no.nextval,'안녕', '하세요', '잡담');
+insert into b_board(id, board_no, title, content, category_name) values ('qrtz7950', seq_board_no.nextval,'안녕', '하세요', '잡담');
 insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '잡담');
 insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '잡담');
 
@@ -210,8 +210,8 @@ insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 
 
 select friend_no, id, friend, reg_date from friend;
 
-insert into friend(friend_no, id, friend) values(seq_friend_no.nextval, 'qrtz', 'asrbtjd');
-insert into friend(friend_no, id, friend) values(seq_friend_no.nextval, 'asrbtjd', 'qrtz');
+insert into friend(friend_no, id, friend) values(seq_friend_no.nextval, 'qrtz7950', 'asrbtjd');
+insert into friend(friend_no, id, friend) values(seq_friend_no.nextval, 'asrbtjd', 'qrtz7950');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- friend_req --------------------------------------------------
