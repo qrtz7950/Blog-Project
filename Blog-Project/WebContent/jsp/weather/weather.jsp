@@ -61,6 +61,6 @@
         </script>
     </head>
     <body>
-    	<input type="button" value="새로고침" id="f5" onclick="callback()" >
+    	<input type="button" value="새로고침" onclick="callback()" >
     </body>
 </html>
