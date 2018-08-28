@@ -10,11 +10,6 @@ import kr.co.mlec.util.ConnectionFactory;
 
 public class BoardDAO {
 	
-	Connection conn = null;
-	PreparedStatement pstmt = null;
-	List<BoardVO> boardList = null;
-	BoardVO board = null;
-	
 	public void write(BoardVO board) {
 		
 		StringBuilder sql = new StringBuilder();
@@ -26,7 +21,7 @@ public class BoardDAO {
 				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 			){
 				int loc = 1;
-		
+							
 				pstmt.setString(loc++, board.getId());
 				pstmt.setString(loc++, board.getTitle());
 				pstmt.setString(loc++, board.getContent());

@@ -1,16 +1,16 @@
-package kr.co.mlec.login.dao;
+package kr.co.mlec.member.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import kr.co.mlec.login.vo.LoginVO;
+import kr.co.mlec.member.vo.MemberVO;
 import kr.co.mlec.util.ConnectionFactory;
 
-public class LoginDAO {
-	
-	public LoginVO login(LoginVO loginVO) {
-		LoginVO userVO = null;
+public class MemberDAO {
+
+	public MemberVO login(MemberVO loginVO) {
+		MemberVO userVO = null;
 		
 		StringBuilder sql = new StringBuilder();
 		sql.append("select id, password ");
@@ -28,7 +28,7 @@ public class LoginDAO {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				userVO = new LoginVO();
+				userVO = new MemberVO();
 				userVO.setId(rs.getString("id"));
 				userVO.setPw(rs.getString("password"));
 			}

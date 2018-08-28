@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 		initParams = { 
 				@WebInitParam(name = "controllers", 
 							  value = "kr.co.mlec.board.control.BoardController"
-							  		+ "|kr.co.mlec.login.control.LoginController")
+							  		+ "|kr.co.mlec.member.control.MemberController")
 		})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
