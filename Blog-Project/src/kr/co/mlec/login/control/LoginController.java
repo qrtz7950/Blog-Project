@@ -39,11 +39,10 @@ public class LoginController {
 		
 		LoginVO userVO = service.login(loginVO); //범인
 		System.out.println(userVO);
-		System.out.println(request.getContextPath());
 		
 		ModelAndView mav = new ModelAndView();
 		if(userVO==null) {
-			mav.setView("redirect:" + request.getContextPath() + "/login/loginForm.do");
+			mav.setView("redirect:" + request.getContextPath() + "/login/loginFail.do");
 		}else {
 			mav.setView("redirect:" + request.getContextPath());
 			HttpSession session = request.getSession();
@@ -51,6 +50,11 @@ public class LoginController {
 		}
 		
 		return mav;
+	}
+	
+	@RequestMapping("/login/loginFail.do")
+	public ModelAndView loginFail(HttpServletRequest request, HttpServletResponse resonse) throws Exception {
+		return new ModelAndView("/jsp/login/loginFail.jsp");
 	}
 	
 	@RequestMapping("/login/logout.do")

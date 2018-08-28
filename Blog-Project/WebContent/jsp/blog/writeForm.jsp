@@ -66,6 +66,7 @@
 		<div>
 			<br>
 			<form action="${ pageContext.request.contextPath }/write.do" method="post">
+				<input type="hidden" name="id" value="${sessionScope.userVO.id}">
 				<div class="container">
 					<div>
 						<div class="input-group" style="width: 30%; float: left;">

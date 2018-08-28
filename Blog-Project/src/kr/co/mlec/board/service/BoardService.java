@@ -15,6 +15,10 @@ public class BoardService {
 	public void write(BoardVO board) {
 		dao.write(board); 
 	}
+	
+	public BoardVO selectDetailBoardByNo(int no) {
+		return dao.selectDetailBoardByNo(no);
+	}
 	  
 //	public List<BoardVO> selectAll() {
 //		return dao.selectAll();

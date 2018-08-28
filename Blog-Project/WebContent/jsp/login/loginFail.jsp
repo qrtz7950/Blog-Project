@@ -5,10 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
-	alert("${msg}")
-	location.href = "${url}"
-	
-</body>
-</html>
+<script>
+		alert("아이디와 비밀번호를 확인해주세요")
+		location.href = "${pageContext.request.contextPath}/login/loginForm.do"
+</script>

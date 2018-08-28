@@ -52,4 +52,21 @@ public class BoardController extends HttpServlet {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="/blog/detailBoard.do")
+	public ModelAndView viewDetailBoard(HttpServletRequest request, HttpServletResponse response)
+				throws Exception{
+		
+		ServletContext sc = request.getServletContext();
+		
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		
+		BoardVO detailBlogBoard = service.selectDetailBoardByNo(Integer.parseInt(request.getParameter("board_no")));
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/jsp/blog/detailBoard.jsp");
+		mav.addAttribute("detailBlogBoard", detailBlogBoard);
+		
+		return mav;
+	}
 }

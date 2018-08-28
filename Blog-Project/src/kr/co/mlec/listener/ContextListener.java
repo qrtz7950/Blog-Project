@@ -5,8 +5,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import kr.co.mlec.blogBoard.dao.BlogBoardDAO;
-import kr.co.mlec.blogBoard.service.BlogBoardService;
 import kr.co.mlec.board.dao.BoardDAO;
 import kr.co.mlec.board.service.BoardService;
 import kr.co.mlec.login.dao.LoginDAO;
@@ -38,9 +36,6 @@ public class ContextListener implements ServletContextListener {
     	sc.setAttribute("boardDAO", new BoardDAO());
     	BoardDAO boardDao = new BoardDAO();
     	sc.setAttribute("boardService", new BoardService(boardDao));
-    	
-    	BlogBoardDAO blogBoardDao = new BlogBoardDAO();
-    	sc.setAttribute("blogBoardService", new BlogBoardService(blogBoardDao));
     	
     	LoginDAO loginDao = new LoginDAO();
     	sc.setAttribute("loginService", new LoginService(loginDao));

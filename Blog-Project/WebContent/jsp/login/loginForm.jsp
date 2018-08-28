@@ -60,6 +60,9 @@
 				<input type="submit" class="btn btn-outline-secondary" value="로그인"></input>
 				<button type="button" class="btn btn-outline-secondary" onclick="location.href='${pageContext.request.contextPath}'">메인으로</button>
 			</form>
+			<div style="margin-top: 20px">
+			<jsp:include page="/jsp/naverLogin/naverLogin.jsp"/>
+			</div>
 		</div>
 	</section>
 </body>

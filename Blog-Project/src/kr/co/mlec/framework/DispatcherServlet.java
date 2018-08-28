@@ -22,9 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 		urlPatterns = { "*.do" }, 
 		initParams = { 
 				@WebInitParam(name = "controllers", 
-<<<<<<< HEAD
-							  value = "kr.co.mlec.board.control.BoardController" 
-									+"|kr.co.mlec.blogBoard.control.BlogBoardController"
+							  value = "kr.co.mlec.board.control.BoardController"
 							  		+ "|kr.co.mlec.login.control.LoginController")
 		})
 public class DispatcherServlet extends HttpServlet {
@@ -38,9 +36,9 @@ public class DispatcherServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		
 		String ctrlNames = config.getInitParameter("controllers");
-		
 		try {
 			mappings = new HandlerMapping(ctrlNames);
+//			System.out.println(ctrlNames);
 		} catch(Exception e) {
 			throw new ServletException(e);
 		}
@@ -53,7 +51,7 @@ public class DispatcherServlet extends HttpServlet {
 
 		String uri = request.getRequestURI();
 		uri = uri.substring(request.getContextPath().length());
-		System.out.println("요청 uri : " + uri);
+//		System.out.println("요청 uri : " + uri);
 		
 		String view ="";
 		try {
@@ -81,9 +79,11 @@ public class DispatcherServlet extends HttpServlet {
 		} catch (Exception e) {
 //			e.printStackTrace();
 			request.setAttribute("exception", e);
+			System.out.println(e);
 			view = "/jsp/error/error.jsp";
 //			view = "/error";
 		}
+		
 		
 		// 2. 해당 jsp로 이동
 		if(view.startsWith("redirect:")) {

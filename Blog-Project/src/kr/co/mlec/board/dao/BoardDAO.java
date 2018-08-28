@@ -3,12 +3,10 @@ package kr.co.mlec.board.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
 import kr.co.mlec.board.vo.BoardVO;
 import kr.co.mlec.util.ConnectionFactory;
-import kr.co.mlec.util.JDBCClose;
 
 public class BoardDAO {
 	
@@ -42,16 +40,44 @@ public class BoardDAO {
 		} 		
 	}
 	
-	public static void main(String[] args) {
-		BoardVO b = new BoardVO();
-		b.setId("qrtz7950");
-		b.setTitle("합칠까");
-		b.setContent("그럴까!");
-		b.setCategory_name("카테");
-		b.setTag("#병문병문#규성규성");
+	public BoardVO selectDetailBoardByNo(int no) {
 		
-		new BoardDAO().write(b);
-		System.out.println(b);
+		BoardVO board = null;
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select id, board_no, view_cnt, title, content, tag, category_name, like_cnt, to_char(reg_date ,'yyyy-mm-dd') as reg_date " );
+		sql.append(" from b_board ");
+		sql.append(" where board_no = ? ");
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			
+			pstmt.setInt(1, no);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			rs.next();
+			
+			board = new BoardVO();
+			board.setId(rs.getString("id"));
+			board.setBoard_no(rs.getInt("board_no"));
+			board.setView_cnt(rs.getInt("view_cnt"));
+			board.setTitle(rs.getString("title"));
+			board.setContent(rs.getString("content"));
+			board.setTag(rs.getString("tag"));
+			board.setCategory_name(rs.getString("category_name"));
+			board.setLike_cnt(rs.getInt("like_cnt"));
+			board.setReg_date(rs.getString("reg_date"));
+			
+			System.out.println(board);
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		 return board;
 	}
 
 }
