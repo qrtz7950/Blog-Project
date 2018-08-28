@@ -1,1 +1,1 @@
-<img src="https://raw.githubusercontent.com/qrtz7950/MVC-Model-2-Blog-Project/master/table/%EC%BA%A1%EC%B2%98.PNG">
+<img src="https://github.com/qrtz7950/Blog-Project/blob/master/table/%EC%BA%A1%EC%B2%982.PNG">
