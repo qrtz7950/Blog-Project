@@ -114,17 +114,27 @@ insert into id(id, id_no, password) values('bmkwak22', seq_id_no.nextval, 'bmkwa
 insert into id(id, id_no, password) values('asrbtjd', seq_id_no.nextval, 'asrbtjd');
 
 -----------------------------------------------------------------------------------------------
+--------------------------------- blog --------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+
+select id, blog_no,visit_today, visit_total, reg_date from blog;
+
+insert into blog(id, blog_no) values('qrtz7950', seq_blog_no.nextval);
+insert into blog(id, blog_no) values('asrbtjd', seq_blog_no.nextval);
+insert into blog(id, blog_no) values('bmkwak22', seq_blog_no.nextval);
+
+-----------------------------------------------------------------------------------------------
 --------------------------------- B_BOARD -----------------------------------------------------
 -----------------------------------------------------------------------------------------------
 
 select id, board_no, view_cnt, title, content, category_name, like_cnt, reg_date from b_board;
 
-insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'¾È³ç', 'ÇÏ¼¼¿ä', 'Àâ´ã');
-insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'¿©±â¿À¸é ÀÌ±ÛºÎÅÍ ºÁ¶ó', 'eagle', 'Àâ´ã');
-insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'¾È³ç', 'ÇÏ¼¼¿ä', 'Àâ´ã');
-insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'¾È³ç', 'ÇÏ¼¼¿ä', 'Àâ´ã');
-insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'¿©±â¿À¸é ÀÌ±ÛºÎÅÍ ºÁ¶ó', 'eagle', 'Àâ´ã');
-insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'¿©±â¿À¸é ÀÌ±ÛºÎÅÍ ºÁ¶ó', 'eagle', 'Àâ´ã');
+insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'ì•ˆë…•', 'í•˜ì„¸ìš”', 'ì¡ë‹´');
+insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'ì—¬ê¸°ì˜¤ë©´ ì´ê¸€ë¶€í„° ë´ë¼', 'eagle', 'ì¡ë‹´');
+insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'ì•ˆë…•', 'í•˜ì„¸ìš”', 'ì¡ë‹´');
+insert into b_board(id, board_no, title, content, category_name) values ('qrtz', seq_board_no.nextval,'ì•ˆë…•', 'í•˜ì„¸ìš”', 'ì¡ë‹´');
+insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'ì—¬ê¸°ì˜¤ë©´ ì´ê¸€ë¶€í„° ë´ë¼', 'eagle', 'ì¡ë‹´');
+insert into b_board(id, board_no, title, content, category_name) values ('sad', seq_board_no.nextval,'ì—¬ê¸°ì˜¤ë©´ ì´ê¸€ë¶€í„° ë´ë¼', 'eagle', 'ì¡ë‹´');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_tag ---------------------------------------------------
@@ -133,15 +143,15 @@ insert into b_board(id, board_no, title, content, category_name) values ('sad', 
 select tag_no, board_no, tag_name from board_tag;
 select * from board_tag;
 
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 1, '±ÔÇÏ');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 1, '±Ô¼ºÇÏÀÌ¶ó´Â');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 1, '¶æ');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, '°ûÇÏ');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, '°ûº´ÇÏÀÌ¶ó´Â');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, '¶æ');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'Á¦ÇÏ');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'Á¦ÈñÇÏÀÌ¶ó´Â');
-insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, '¶æ');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 1, 'ê·œí•˜');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 1, 'ê·œì„±í•˜ì´ë¼ëŠ”');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 1, 'ëœ»');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'ê³½í•˜');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'ê³½ë³‘í•˜ì´ë¼ëŠ”');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'ëœ»');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'ì œí•˜');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'ì œí¬í•˜ì´ë¼ëŠ”');
+insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2, 'ëœ»');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_category ----------------------------------------------
@@ -149,18 +159,18 @@ insert into board_tag(tag_no, board_no, tag_name) values (seq_tag_no.nextval, 2,
 
 select category_no, id, category_name from board_category;
 
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', 'Àâ´ã');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', 'ÀÏ»ó');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', '»ç°Ç');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', 'Ä«Å×°í¸®');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', 'Àâ´ã');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', 'ÀÏ»ó');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', '»ç°Ç');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', 'Ä«Å×°í¸®');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', 'Àâ´ã');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', 'ÀÏ»ó');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', '»ç°Ç');
-insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', 'Ä«Å×°í¸®');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', 'ì¡ë‹´');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', 'ì¼ìƒ');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', 'ì‚¬ê±´');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'qrtz7950', 'ì¹´í…Œê³ ë¦¬');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', 'ì¡ë‹´');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', 'ì¼ìƒ');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', 'ì‚¬ê±´');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'bmkwak22', 'ì¹´í…Œê³ ë¦¬');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', 'ì¡ë‹´');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', 'ì¼ìƒ');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', 'ì‚¬ê±´');
+insert into board_category(category_no, id, category_name) values(seq_board_category_no.nextval, 'asrbtjd', 'ì¹´í…Œê³ ë¦¬');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_category_depth ----------------------------------------
@@ -168,15 +178,15 @@ insert into board_category(category_no, id, category_name) values(seq_board_cate
 
 select category_depth_no, id, category_name, category_depth_name from board_category_depth;
 
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'asrbtjd', 'Ä«Å×°í¸®', 'Ä«Å×');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'asrbtjd', 'Ä«Å×°í¸®', '°í¸®');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'asrbtjd', 'Ä«Å×°í¸®', 'ÈåÇì');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'qrtz7950', 'Ä«Å×°í¸®', 'Ä«Å×');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'qrtz7950', 'Ä«Å×°í¸®', '°í¸®');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'qrtz7950', 'Ä«Å×°í¸®', 'ÈåÇì');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'bmkwak22', 'Ä«Å×°í¸®', 'Ä«Å×');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'bmkwak22', 'Ä«Å×°í¸®', '°í¸®');
-insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'bmkwak22', 'Ä«Å×°í¸®', 'ÈåÇì');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'asrbtjd', 'ì¹´í…Œê³ ë¦¬', 'ì¹´í…Œ');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'asrbtjd', 'ì¹´í…Œê³ ë¦¬', 'ê³ ë¦¬');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'asrbtjd', 'ì¹´í…Œê³ ë¦¬', 'íí—¤');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'qrtz7950', 'ì¹´í…Œê³ ë¦¬', 'ì¹´í…Œ');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'qrtz7950', 'ì¹´í…Œê³ ë¦¬', 'ê³ ë¦¬');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'qrtz7950', 'ì¹´í…Œê³ ë¦¬', 'íí—¤');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'bmkwak22', 'ì¹´í…Œê³ ë¦¬', 'ì¹´í…Œ');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'bmkwak22', 'ì¹´í…Œê³ ë¦¬', 'ê³ ë¦¬');
+insert into board_category_depth(category_depth_no, id, category_name, category_depth_name) values(seq_board_category_depth_no.nextval, 'bmkwak22', 'ì¹´í…Œê³ ë¦¬', 'íí—¤');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_reply -------------------------------------------------
@@ -184,15 +194,15 @@ insert into board_category_depth(category_depth_no, id, category_name, category_
 
 select reply_no, board_no, id, content, reg_date from reply;
 
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 1, 'qrtz7950', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 1, 'qrtz7950', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 1, 'qrtz7950', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 2, 'bmkwak22', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 2, 'bmkwak22', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 2, 'bmkwak22', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 3, 'asrbtjd', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 3, 'asrbtjd', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
-insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 3, 'asrbtjd', 'ÇÏÇÏÇÏÇÏÇÏÇÏ¤¿K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 1, 'qrtz7950', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 1, 'qrtz7950', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 1, 'qrtz7950', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 2, 'bmkwak22', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 2, 'bmkwak22', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 2, 'bmkwak22', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 3, 'asrbtjd', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 3, 'asrbtjd', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
+insert into reply(reply_no, board_no, id, content) values(seq_reply_no.nextval, 3, 'asrbtjd', 'í•˜í•˜í•˜í•˜í•˜í•˜ã…K');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- friend -----------------------------------------------------
@@ -211,16 +221,6 @@ select req_no, target_id, req_id, reg_date from friend_req;
 
 insert into friend_req(req_no, target_id, req_id) values(seq_friend_req_no.nextval, 'bmkwak22', 'qrtz7950');
 insert into friend_req(req_no, target_id, req_id) values(seq_friend_req_no.nextval, 'bmkwak22', 'asrbtjd');
-
------------------------------------------------------------------------------------------------
---------------------------------- blog --------------------------------------------------------
------------------------------------------------------------------------------------------------
-
-select id, blog_no,visit_today, visit_total, reg_date from blog;
-
-insert into blog(id, blog_no) values('qrtz7950', seq_blog_no.nextval);
-insert into blog(id, blog_no) values('asrbtjd', seq_blog_no.nextval);
-insert into blog(id, blog_no) values('bmkwak22', seq_blog_no.nextval);
 
 
 select * from id;
