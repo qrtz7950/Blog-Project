@@ -1,5 +1,9 @@
 package kr.co.mlec.board.control;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -63,9 +67,19 @@ public class BoardController extends HttpServlet {
 		
 		BoardVO detailBlogBoard = service.selectDetailBoardByNo(Integer.parseInt(request.getParameter("board_no")));
 		
+		// 해시태그정리
+		List<String> tags = new ArrayList<String>(Arrays.asList(detailBlogBoard.getTag().split("#")));
+		tags.remove(0);
+		for(int i=0; i<tags.size(); i++) {
+			tags.set(i, "#" + tags.get(i));
+			System.out.println(tags.get(i));
+		}
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/detailBoard.jsp");
 		mav.addAttribute("detailBlogBoard", detailBlogBoard);
+		mav.addAttribute("hashtags", tags);
+		
 		
 		return mav;
 	}
