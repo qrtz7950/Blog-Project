@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,10 +37,11 @@
 		text-align: center; vertucak-align: middle;
 		display: inline-block;
 		width: 15%;
+		
 	}
 	.replyForm2{
 		display: inline-block;
-		width: 55%;
+		padding: 10px;
 	}
 	.replyForm3{
 		text-align: center; vertucak-align: middle;
@@ -87,17 +89,17 @@
 					</tr>
 				</table>
 				<hr style="border: thin solid gray;">
-				<a style="font-size: 12px; font-weight: bold;" href="javascript:void(0)" onclick="displayReply()">댓글</a>
+				<a style="font-size: 12px; font-weight: bold;" href="javascript:void(0)" onclick="displayReply()">댓글 ${fn:length(replyList)}</a>
 				|&nbsp;<a style="font-size: 12px; font-weight: bold;">조회수 ${detailBlogBoard.view_cnt}</a>
 				<br>
 				
 				<div id="replies" style="display: none; background-color: #F2F2F2;">
-					<c:forEach begin="1" end="10" varStatus="status">
+					<c:forEach var="reply" items="${replyList}" varStatus="status">
 						<div id="reply${status.count}">
-							<div>
-								<div class="replyForm1">id${status.count}</div>
-								<div class="replyForm2">ㅎㅇddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
-								<div class="replyForm3">등록일</div>
+							<div style="margin-left: ${reply.depth*5}%;">
+								<div class="replyForm1">${reply.id}</div>
+								<div class="replyForm2" style="width: ${55-reply.depth*1}%">${reply.content}</div>
+								<div class="replyForm3">${reply.reg_date}</div>
 								<div class="replyForm4"><a href="javascript:void(0)" onclick="displayReplyInput(${status.count})" style="text-decoration: none;")>답하기</a></div>
 							</div>
 							<div id="replyInput${status.count}" style="display: none;">
@@ -114,8 +116,6 @@
 						</div>
 					</c:forEach>
 				
-				
-					<br>
 					<form action="#">
 						<div class="input-group" style="width:95%;  margin: 0 auto;">
 							  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" aria-label="reply" aria-describedby="button-addon2"></textarea>

@@ -14,6 +14,8 @@ import kr.co.mlec.board.vo.BoardVO;
 import kr.co.mlec.framework.ModelAndView;
 import kr.co.mlec.framework.annotation.Controller;
 import kr.co.mlec.framework.annotation.RequestMapping;
+import kr.co.mlec.reply.service.ReplyService;
+import kr.co.mlec.reply.vo.ReplyVO;
 
 @Controller
 public class BoardController extends HttpServlet {
@@ -64,8 +66,9 @@ public class BoardController extends HttpServlet {
 		ServletContext sc = request.getServletContext();
 		
 		BoardService service = (BoardService) sc.getAttribute("boardService");
-		
-		BoardVO detailBlogBoard = service.selectDetailBoardByNo(Integer.parseInt(request.getParameter("board_no")));
+		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		// 게시글 번호로 게시글 정보 조회
+		BoardVO detailBlogBoard = service.selectDetailBoardByNo(board_no);
 		
 		// 해시태그정리
 		List<String> tags = new ArrayList<String>(Arrays.asList(detailBlogBoard.getTag().split("#")));
@@ -75,12 +78,20 @@ public class BoardController extends HttpServlet {
 			System.out.println(tags.get(i));
 		}
 		
+		// 댓글 정보 가져오기
+		ReplyService replyService = (ReplyService) sc.getAttribute("replyService");
+		List<ReplyVO> replyList = replyService.selectReplyByBoardNo(board_no);
+		// 댓글 정보 정렬
+		
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/detailBoard.jsp");
 		mav.addAttribute("detailBlogBoard", detailBlogBoard);
 		mav.addAttribute("hashtags", tags);
+		mav.addAttribute("replyList", replyList);
 		
 		
 		return mav;
 	}
+	
 }
