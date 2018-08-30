@@ -70,14 +70,11 @@ public class MemberController {
 		if(userVO==null) {
 			mav.setView("redirect:" + request.getContextPath() + "/login/loginFail.do");
 		}else {
-<<<<<<< HEAD
-			mav.setView("redirect:" + request.getContextPath()+ "/index.do");
-=======
 			BoardService boardService = (BoardService) sc.getAttribute("boardService");
 			List<String> categoryList = boardService.getCategory(userVO.getId());
 			
-			mav.setView("redirect:" + request.getContextPath() + "/myBlog.do");
->>>>>>> origin/Ddock2
+			mav.setView("redirect:" + request.getContextPath()+ "/index.do");
+
 			HttpSession session = request.getSession();
 			session.setAttribute("userVO", userVO);
 			session.setAttribute("categoryList", categoryList);
