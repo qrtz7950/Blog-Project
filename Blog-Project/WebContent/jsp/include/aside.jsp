@@ -42,10 +42,15 @@
 			
 			
 			
-			<h4 class="font-italic">서울 중기 예보</h4>
+			<h2 class="font-italic">
+				서초1동 날씨
+				<p>(3시간)</p>
+			</h2>
+			<input type="button" value="새로고침" id="f5" onclick="callback()" >
 			<div id="weather">
+				<jsp:include page="/jsp/weather/weather.jsp"/>	
 			</div>
-			<jsp:include page="/jsp/weather/weather.jsp" flush="true"/>	
+			
 				
 			
 			
