@@ -102,7 +102,6 @@
       <h1>인기 게시글</h1>
       <p>새로운 친구를 찾고 블로그를 방문해 보세요!</p>
       <hr><br><br>
-      
       <c:forEach items="${ mainPopular }" var="pop">
       
     	<div style="display: inline-block; width: 30%;">
@@ -123,12 +122,8 @@
 	      <hr>
 	      
 		</c:forEach>
-	  
     </div>
-<%--     	
-	      <h4>${ mainBoard.title }</h4>
-	      ${ mainBoard.content }
---%>
+    
     <div class="col-sm-2 sidenav">
       <h4>최근에 등록된 게시물</h4>
       	<c:forEach items="${ mainRecent }" var="pre">

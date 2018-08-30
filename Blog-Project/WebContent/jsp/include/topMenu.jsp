@@ -11,7 +11,7 @@
  
 <div align="center">
 	<div align="center">
-		<a style="font-size: 30pt;" >${ userVO.id }의 블로그</a>
+		<a href="${pageContext.request.contextPath}/myBlog.do" style="font-size: 30pt;" >${ userVO.id }의 블로그</a>
 	</div>
 	<div align="right">
 		<c:choose>
