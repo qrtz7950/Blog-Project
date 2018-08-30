@@ -67,7 +67,7 @@ public class MemberController {
 		if(userVO==null) {
 			mav.setView("redirect:" + request.getContextPath() + "/login/loginFail.do");
 		}else {
-			mav.setView("redirect:" + request.getContextPath() + "/myBlog.do");
+			mav.setView("redirect:" + request.getContextPath()+ "/index.do");
 			HttpSession session = request.getSession();
 			session.setAttribute("userVO", userVO);
 		}

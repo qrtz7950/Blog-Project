@@ -1,4 +1,4 @@
-drop table b_member CASCADE CONSTRAINTS;
+﻿drop table b_member CASCADE CONSTRAINTS;
 drop table blog CASCADE CONSTRAINTS;
 drop table b_board CASCADE CONSTRAINTS;
 drop table board_category CASCADE CONSTRAINTS;
@@ -122,14 +122,14 @@ insert into blog(id, blog_no, present_board) values('bmkwak22', seq_blog_no.next
 
 select id, board_no, view_cnt, title, content, tag, category_name, like_cnt, reg_date from b_board;
 
-insert into b_board(id, board_no, title, content, tag, category_name) values ('qwe', seq_board_no.nextval,'안녕', '하세요', '#매워매워#으아아아악', '잡담');
-insert into b_board(id, board_no, title, content, tag, category_name) values ('qwe', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워#으아아아악', '잡담');
-insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'안녕', '하세요', '#매워매워#으아아아악', '잡담');
-insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워#으아아아악', '잡담');
-insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'안녕', '하세요', '#매워매워#으아아아악', '잡담');
-insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'안녕', '하세요', '#매워매워#으아아아악', '잡담');
-insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워#으아아아악', '잡담');
-insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워#으아아아악', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qwe', seq_board_no.nextval,'qwe의 글제목', 'qweqwe', '#매워매워#으아아아악', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qwe', seq_board_no.nextval,'노루가 다니는 길은?', '노르웨이', '#매워매워#으아아아악', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'아 졸리다', '하기싫다', '#매워매워#으아아아악', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'qrtz7950', 'qrtz7950qrtz7950', '#매워매워#으아아아악', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'안녕', '하세요', '#매워매워', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'안녕', '하세요', '#매워매워', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('bmkwak22', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워', '잡담');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_category ----------------------------------------------

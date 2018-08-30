@@ -151,7 +151,7 @@ public class BoardDAO {
 		return preNo;
 	}
 
-	public int selectPoppularBoard() {
+	public int selectPoppularBoard(MemberVO me) {
 		
 		int popNo = 2;
 		
@@ -159,12 +159,15 @@ public class BoardDAO {
 		
 		sql.append("select board_no, like_cnt ");
 		sql.append("	   from b_board ");
+		sql.append("	   where id = ? ");
 		sql.append(" 	   order by like_cnt desc ");
 		
 		try(
 			Connection conn = ConnectionFactory.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 		){
+			pstmt.setString(1, me.getId());
+			
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -238,5 +241,89 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public List<BoardVO> selectPresentBoard() {
+		
+		List<BoardVO> list = new ArrayList<>();
+		BoardVO board = new BoardVO();
+
+		StringBuilder sql = new StringBuilder();
+		sql.append("select id, board_no, view_cnt, title, content, tag, category_name, like_cnt, to_char(reg_date ,'yyyy-mm-dd') as reg_date " );
+		sql.append(" from b_board ");
+		sql.append(" order by board_no desc");
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				board = new BoardVO();
+				board.setId(rs.getString("id"));
+				board.setBoard_no(rs.getInt("board_no"));
+				board.setView_cnt(rs.getInt("view_cnt"));
+				board.setTitle(rs.getString("title"));
+				board.setContent(rs.getString("content"));
+				board.setTag(rs.getString("tag"));
+				board.setCategory_name(rs.getString("category_name"));
+				board.setLike_cnt(rs.getInt("like_cnt"));
+				board.setReg_date(rs.getString("reg_date"));
+				
+				list.add(board);
+				if(list.size() == 7) {
+					break;
+				}
+			}
+			System.out.println("selectPresentBoard()안에 리스트 사이즈 : " + list.size() );
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
+	public List<BoardVO> selectPopularBoard() {
+		
+		List<BoardVO> list = new ArrayList<>();
+		BoardVO board = new BoardVO();
+
+		StringBuilder sql = new StringBuilder();
+		sql.append("select id, board_no, view_cnt, title, content, tag, category_name, like_cnt, to_char(reg_date ,'yyyy-mm-dd') as reg_date " );
+		sql.append(" from b_board ");
+		sql.append(" order by view_cnt desc ");
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				board = new BoardVO();
+				board.setId(rs.getString("id"));
+				board.setBoard_no(rs.getInt("board_no"));
+				board.setView_cnt(rs.getInt("view_cnt"));
+				board.setTitle(rs.getString("title"));
+				board.setContent(rs.getString("content"));
+				board.setTag(rs.getString("tag"));
+				board.setCategory_name(rs.getString("category_name"));
+				board.setLike_cnt(rs.getInt("like_cnt"));
+				board.setReg_date(rs.getString("reg_date"));
+				
+				list.add(board);
+				if(list.size() == 3) {
+					break;
+				}
+			}
+			System.out.println("selectPopularBoard()안에 리스트 사이즈 : " + list.size() );
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 }

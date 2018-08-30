@@ -4,129 +4,148 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="icon" href="https://getbootstrap.com/favicon.ico">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<!-- Bootstrap core CSS -->
-
-<link href="/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<!-- Documentation extras -->
-
-<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
-
-<link href="/docs/4.1/assets/css/docs.min.css" rel="stylesheet">
-<title>HOME</title>
-
-<link
-	href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script>
-	<!-- holder.js link --> 
-	<script> 
-		$(document).ready(function() { 
-			$('#carouselExampleCaptions').carousel('cycle');
-		}); 
-	</script>
-
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 1000px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
 </head>
 <body>
-	<div class="container">
-		<header>
-			<div align="center">
-				<!-- Image and text -->
-				<nav class="navbar navbar-light bg-light">
-					<a class="navbar-brand" href="${ pageContext.request.contextPath }/Home.jsp"> <img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFlb-IqSXi_WUIrYpDIKVhieZ54TyExEKhy7vLC5jhFhWb8nUF" width="30"
-						height="30" class="d-inline-block align-top" alt="">
-						BLOG PROJECT HOME
-					</a>
-				<div align="right">
-					<c:choose>
-						<c:when test="${empty userVO}">
-							<form action="${pageContext.request.contextPath}/login/loginForm.do" method="post">
-							<input type="submit" name="select" value="Login" class="btn btn-outline-secondary btn-sm">
-							<input type="submit" name="select" value="Register" class="btn btn-outline-secondary btn-sm">
-							</form>	
-						</c:when>
-						<c:otherwise>
-								<div style="display: inline-block;">
-									<div>
-										<button type="button" class="btn btn-outline-secondary btn-sm"
-											onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
-									</div>
-									<div>
-										<form action="${pageContext.request.contextPath}/myBlog.do" method="post">
-											<input type="hidden" name="blogID" value="${ userVO.id }">
-										<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
-										</form>	
-									</div>
-								</div>
-						</c:otherwise>
-					</c:choose>
-				</div>
-				</nav>
-			</div>
-			
 
-		</header><br>
-	
-			<div class="bd-example">
-				<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="1000">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
-						<li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active">
-							<img class="d-block w-100" src="https://www.fmkorea.com/files/attach/images/486263/006/757/060/c779fb92eff581f5e033f926f2e4b2f5.jpg"
-								data-src="https://www.fmkorea.com/files/attach/images/486263/006/757/060/c779fb92eff581f5e033f926f2e4b2f5.jpg"
-								alt="First slide" />
-							<div class="carousel-caption d-none d-md-block">
-								<h5>First slide label</h5>
-								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100" src="https://www.fmkorea.com/files/attach/images/486263/476/768/060/ba279872661ceaab9bdac851013587a8.jpg"
-								data-src="https://www.fmkorea.com/files/attach/images/486263/476/768/060/ba279872661ceaab9bdac851013587a8.jpg"
-								alt="Second slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h5>Second slide label</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100" src="https://www.fmkorea.com/files/attach/images/486263/341/785/060/38e5e2a3b3135a02877ced5d18d63022.jpg"
-								data-src="https://www.fmkorea.com/files/attach/images/486263/341/785/060/38e5e2a3b3135a02877ced5d18d63022.jpg"
-								alt="Third slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h5>Third slide label</h5>
-								<p>Praesent commodo cursus magna, vel scelerisque nisl
-									consectetur.</p>
-							</div>
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleCaptions"
-						role="button" data-slide="prev">
-						 <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
-						 <span class="sr-only">Previous</span>
-						 
-					</a> 
-					<a class="carousel-control-next" href="#carouselExampleCaptions"
-						role="button" data-slide="next"> 
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-					</div>
-				</div><Br><br><br>
-			</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="d-inline-block align" href="#"><img style="margin-top: 10px; margin-right: 10px;" width="35px" height="35px" src="${ pageContext.request.contextPath }/img/a.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <c:if test="${ not empty userVO }">
+        	<li><a href="${pageContext.request.contextPath}/myBlog.do">MyBlog</a></li>
+        </c:if>
+      </ul>
+      <form action="${pageContext.request.contextPath}/login/loginForm.do" method="post">
+	      <ul class="nav navbar-nav navbar-right">
+	      	<c:choose >
+	      		<c:when test="${empty userVO}">
+			        <li>
+			        <li><a href="${pageContext.request.contextPath}/login/loginForm.do?select=Register"> Register</a></li>
+			        <li><a href="${pageContext.request.contextPath}/login/loginForm.do?select=Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      		</c:when>
+	      		<c:otherwise>
+			        <li><a href="${pageContext.request.contextPath}/login/logout.do"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+	      		</c:otherwise>
+	      	</c:choose>
+	      </ul>
+      </form>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+		<c:if test="${ not empty userVO }">    
+	      <h6>친구 추천</h6>
+	      	<div align="left" style="padding: 40px;">
+		      <c:forEach items="${ friend }" var="fri">
+		    	<p><a href="${pageContext.request.contextPath}/myBlog.do"><img width="30px" height="30px" src="${ pageContext.request.contextPath }/img/b.jpg">&nbsp;${ fri.id }</a></p>
+		      </c:forEach>
+		    </div>
+	    </c:if>
+	    <c:if test="${ empty userVO }">
+	    	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	    	<p>지금 가입하여 친구들을 만들어 보세요!</p>
+	    </c:if>
+      
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>인기 게시글</h1>
+      <p>새로운 친구를 찾고 블로그를 방문해 보세요!</p>
+      <hr><br><br>
+      
+      <c:forEach items="${ mainPopular }" var="pop">
+      
+    	<div style="display: inline-block; width: 30%;">
+    	   <div>
+              <div>
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22288%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20288%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1656b46a0e6%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1656b46a0e6%22%3E%3Crect%20width%3D%22288%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2296.8359375%22%20y%3D%22118.8%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+              </div>
+            </div>
+    	</div>
+    	<div style="display: inline-block; width: 65%; float: right;">
+    	  <div style="height: 30%;">
+    	  	<h4>${ pop.title }</h4>
+    	  </div>
+    	  <div style="height: 60%;">
+    	    ${ pop.content }
+    	  </div>
+    	</div>
+	      <hr>
+	      
+		</c:forEach>
+	  
+    </div>
+<%--     	
+	      <h4>${ mainBoard.title }</h4>
+	      ${ mainBoard.content }
+--%>
+    <div class="col-sm-2 sidenav">
+      <h4>최근에 등록된 게시물</h4>
+      	<c:forEach items="${ mainRecent }" var="pre">
+	      
+	      <div class="well" align="left">
+	        <h4>${ pre.title }</h4>
+	        <h6>${ pre.content }</h6>
+	      </div>
+	      
+	    </c:forEach>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p></p>
+</footer>
+
 </body>
-
 </html>

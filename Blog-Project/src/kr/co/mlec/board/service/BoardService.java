@@ -43,8 +43,8 @@ public class BoardService {
 		return presentBoard;
 	}
 
-	public BoardVO selectPopularBoard() {
-		int popNo = dao.selectPoppularBoard();
+	public BoardVO selectPopularBoard(MemberVO me) {
+		int popNo = dao.selectPoppularBoard(me);
 		BoardVO presentBoard = dao.selectDetailBoardByNo(popNo);
 		return presentBoard;
 	}
@@ -58,6 +58,16 @@ public class BoardService {
 	public List<String> getCategory(String id) {
 		
 		List<String> list = dao.getCategory(id);
+		return list;
+	}
+
+	public List<BoardVO> selectPresentBoard() {
+		List<BoardVO> list = dao.selectPresentBoard();
+		return list;
+	}
+
+	public List<BoardVO> selectPopularBoard() {
+		List<BoardVO> list = dao.selectPopularBoard();
 		return list;
 	}
 }

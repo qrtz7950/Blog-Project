@@ -37,7 +37,7 @@ public class BoardController extends HttpServlet {
 		List<BoardVO> recentBoard = service.selectRecentReplyList(me);
 		
 		BoardVO presentBoard = service.selectPresentBoard(me);
-		BoardVO popularBoard = service.selectPopularBoard();
+		BoardVO popularBoard = service.selectPopularBoard(me);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/bloghome.jsp");

@@ -3,6 +3,8 @@ package kr.co.mlec.member.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import kr.co.mlec.member.vo.MemberVO;
 import kr.co.mlec.util.ConnectionFactory;
@@ -23,7 +25,7 @@ public class MemberDAO {
 		) {
 			
 			pstmt.setString(1, loginVO.getId());
-			pstmt.setString(2, loginVO.getPw());
+			pstmt.setString(2, loginVO.getPw()); 
 			
 			ResultSet rs = pstmt.executeQuery();
 			
@@ -113,6 +115,45 @@ public class MemberDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public List<MemberVO> selectFriend(MemberVO me) {
+		
+		MemberVO userVO = null;
+		List<MemberVO> list = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select id, password ");
+		sql.append("  from b_member ");
+		sql.append("  where id != ?  ");
+		sql.append("  order by id_no desc ");
+		
+		try(
+				Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		) {
+			pstmt.setString(1, me.getId()); 
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				userVO = new MemberVO();
+				userVO.setId(rs.getString("id"));
+				userVO.setPw(rs.getString("password"));
+				
+				list.add(userVO);
+				
+				if(list.size() == 5) {
+					break;
+				}
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return list;
 	}
 
 	

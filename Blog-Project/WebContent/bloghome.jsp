@@ -14,7 +14,7 @@
     <meta name="author" content=""> -->
 	<link rel="icon" href="https://getbootstrap.com/favicon.ico">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>${ me.id }의 블로그</title>
+    <title>${ userVO.id }의 블로그</title>
     
  <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
