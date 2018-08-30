@@ -13,4 +13,8 @@
     apiURL += "&state=" + state;
     session.setAttribute("state", state);
  %>
-  <a href="<%=apiURL%>"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
+<a href="<%=apiURL%>">
+	<div style="background-color:#1EC800" align="center">
+		<img height="50" src="https://github.com/qrtz7950/Blog-Project/blob/master/naver.png?raw=true"/>
+	</div>
+</a>

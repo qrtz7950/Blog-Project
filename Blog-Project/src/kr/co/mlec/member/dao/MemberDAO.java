@@ -87,10 +87,10 @@ public class MemberDAO {
 	
 	private void createCategory(MemberVO member) {
 		
-		String sql1 = "insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, ?, '잡담', 0) ";
-		String sql2 = "insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, ?, '일상', 0) ";
-		String sql3 = "insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, ?, '사건', 0) ";
-		String sql4 = "insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, ?, '카테고리', 0) ";
+		String sql1 = "insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, ?, '잡담', 0, 1) ";
+		String sql2 = "insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, ?, '일상', 0, 2) ";
+		String sql3 = "insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, ?, '사건', 0, 3) ";
+		String sql4 = "insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, ?, '카테고리', 0, 4) ";
 		
 		try(
 				Connection conn = ConnectionFactory.getConnection();

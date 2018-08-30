@@ -46,4 +46,10 @@ public class BoardService {
 		List<BoardVO> list = dao.selectRecentReplyList(me);
 		return list;
 	}
+
+	public List<String> getCategory(String id) {
+		
+		List<String> list = dao.getCategory(id);
+		return list;
+	}
 }

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
 
 import kr.co.mlec.board.service.BoardService;
 import kr.co.mlec.board.vo.BoardVO;
@@ -32,11 +33,10 @@ public class BoardController extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		MemberVO me =  (MemberVO) session.getAttribute("userVO");
-		
+	
 		List<BoardVO> recentBoard = service.selectRecentReplyList(me);
 		
 		BoardVO presentBoard = service.selectPresentBoard(me);
-		
 		BoardVO popularBoard = service.selectPopularBoard();
 		
 		ModelAndView mav = new ModelAndView();
@@ -62,7 +62,16 @@ public class BoardController extends HttpServlet {
 		
 		System.out.println("wirte() 호출...");
 		
-		ModelAndView mav = new ModelAndView("/jsp/blog/writeForm.jsp");
+		HttpSession session = request.getSession();
+		MemberVO member = (MemberVO) session.getAttribute("userVO");
+		
+		ServletContext sc = request.getServletContext();
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		List<String> categoryList = service.getCategory(member.getId());
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/jsp/blog/writeForm.jsp");
+		mav.addAttribute("categoryList", categoryList);
 		
 		return mav;
 	}

@@ -56,9 +56,9 @@
 						<div class="input-group" style="width: 30%; float: left;">
 							<select class="custom-select"name="category_name" id="category_name">
 								<option selected value="">카테고리</option>
-								<option value="카테">카테</option>
-								<option value="고리">고리</option>
-								<option value="흐헤">흐헿</option>
+								<c:forEach items="${categoryList}" var="cat">
+									<option value="${cat}">${cat}</option>
+								</c:forEach>
 							</select>
 						</div>
 						<div class="input-group mb-3"style="border: none; width: 68%; float: right;">

@@ -3,5 +3,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <script type="text/javascript">
 	alert('게시완료!');
-	location.href="${pageContext.request.contextPath}"
+	location.href="${pageContext.request.contextPath}/myBlog.do"
 </script>

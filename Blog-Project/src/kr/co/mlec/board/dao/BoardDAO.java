@@ -181,6 +181,41 @@ public class BoardDAO {
 		
 		List<BoardVO> list = new ArrayList<>();
 		
+		
+		return list;
+	}
+
+	public List<String> getCategory(String id) {
+		
+		List<String> list = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("select category_no, id, category_name, depth, parent ");
+		sql.append("	   from board_category ");
+		sql.append(" 	   where id = ? ");
+		sql.append(" 	   order by 1 asc ");
+		
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			pstmt.setString(1, id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getString("category_name"));
+			}
+			
+			for(String cat : list) {
+				System.out.println(cat);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		return list;
 	}
 
