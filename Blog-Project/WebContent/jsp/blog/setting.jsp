@@ -26,6 +26,7 @@
 		<div align="center" style="margin: 15px;">
           <h1 class="jumbotron-heading">블로그 환경설정</h1>
 		</div>
+		
 	      <section class="jumbotron text-center">
 	          <h4>친구 신청 현황</h4><br>
 	          	<div class="firendSel">
