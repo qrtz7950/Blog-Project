@@ -60,4 +60,8 @@ public class BoardService {
 		List<String> list = dao.getCategory(id);
 		return list;
 	}
+	
+	public List<BoardVO> selectByCategory(String category, String id){
+		return dao.selectByCategory(category, id);
+	}
 }

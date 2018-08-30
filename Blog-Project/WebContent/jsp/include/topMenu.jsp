@@ -37,18 +37,20 @@
 </div>
 <div style="background-color: #6B747C;">
 	<div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="background-color: #6B747C;">
-	  <button type="button" class="btn btn-secondary">잡담</button>
-	  <button type="button" class="btn btn-secondary">일상</button>
-	  <button type="button" class="btn btn-secondary">사건</button>
+	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=잡담'">잡담</button>
+	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=일상'">일상</button>
+	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=사건'">사건</button>
 	
 	  <div class="btn-group" role="group">
 	    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	       	카테고리
 	    </button>
 	    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-	      <a class="dropdown-item" href="#">카테</a>
-	      <a class="dropdown-item" href="#">고리</a>
-	      <a class="dropdown-item" href="#">흐헤</a>
+	      <c:forEach var="category" items="${categoryList}" varStatus="status">
+		      <c:if test="${status.count > 3}">
+		      	<a class="dropdown-item" href="${pageContext.request.contextPath}/board/blogViewByCategory.do?category=${category}">${category}</a>
+		      </c:if>
+		  </c:forEach>
 	    </div>
 	  </div>
 	</div>

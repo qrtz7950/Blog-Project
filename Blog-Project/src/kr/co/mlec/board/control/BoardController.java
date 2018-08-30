@@ -144,4 +144,25 @@ public class BoardController extends HttpServlet {
 		return mav;
 	}
 	
+	@RequestMapping("/board/blogViewByCategory.do")
+	public ModelAndView viewByCategory(HttpServletRequest request, HttpServletResponse response){
+		ServletContext sc = request.getServletContext();
+		String category = request.getParameter("category");
+		HttpSession session = request.getSession();
+		MemberVO userVO = (MemberVO) session.getAttribute("userVO");
+		String id = null;
+		if(userVO!=null) {
+			id = userVO.getId();
+		}
+		
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		List<BoardVO> boardList = service.selectByCategory(category, id);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/jsp/blog/blogViewByCategory.jsp");
+		mav.addAttribute("category", category);
+		mav.addAttribute("boardList", boardList);
+		
+		return mav;
+	}
 }

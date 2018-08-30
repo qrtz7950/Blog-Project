@@ -239,4 +239,40 @@ public class BoardDAO {
 		}
 		
 	}
+	
+	public List<BoardVO> selectByCategory(String category, String id){
+		
+		List<BoardVO> list = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select board_no, title, to_char(reg_date ,'yyyy-mm-dd') as reg_date, view_cnt " );
+		sql.append("  from b_board ");
+		sql.append("  where id = ? and category_name = ? ");
+		sql.append("  order by board_no desc ");
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, category);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				BoardVO board = new BoardVO();
+				
+				board.setBoard_no(rs.getInt("board_no"));
+				board.setTitle(rs.getString("title"));
+				board.setReg_date(rs.getString("reg_date"));
+				board.setView_cnt(rs.getInt("view_cnt"));
+				
+				list.add(board);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
