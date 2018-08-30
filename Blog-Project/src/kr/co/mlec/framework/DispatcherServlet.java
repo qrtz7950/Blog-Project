@@ -24,11 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 				@WebInitParam(name = "controllers", 
 							  value = "kr.co.mlec.board.control.BoardController"
 							  		+ "|kr.co.mlec.member.control.MemberController"
-<<<<<<< HEAD
-									+ "|kr.co.mlec.blog.control.BlogController")
-=======
+									+ "|kr.co.mlec.blog.control.BlogController"
 							  		+ "|kr.co.mlec.reply.control.ReplyController")
->>>>>>> origin/Ddock2
 		})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
