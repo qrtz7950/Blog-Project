@@ -1,10 +1,13 @@
 package kr.co.mlec.member.control;
 
+import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kr.co.mlec.board.service.BoardService;
 import kr.co.mlec.framework.ModelAndView;
 import kr.co.mlec.framework.annotation.Controller;
 import kr.co.mlec.framework.annotation.RequestMapping;
@@ -67,9 +70,17 @@ public class MemberController {
 		if(userVO==null) {
 			mav.setView("redirect:" + request.getContextPath() + "/login/loginFail.do");
 		}else {
+<<<<<<< HEAD
 			mav.setView("redirect:" + request.getContextPath()+ "/index.do");
+=======
+			BoardService boardService = (BoardService) sc.getAttribute("boardService");
+			List<String> categoryList = boardService.getCategory(userVO.getId());
+			
+			mav.setView("redirect:" + request.getContextPath() + "/myBlog.do");
+>>>>>>> origin/Ddock2
 			HttpSession session = request.getSession();
 			session.setAttribute("userVO", userVO);
+			session.setAttribute("categoryList", categoryList);
 		}
 		
 		return mav;

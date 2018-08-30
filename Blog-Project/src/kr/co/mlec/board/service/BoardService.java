@@ -60,6 +60,7 @@ public class BoardService {
 		List<String> list = dao.getCategory(id);
 		return list;
 	}
+<<<<<<< HEAD
 
 	public List<BoardVO> selectPresentBoard() {
 		List<BoardVO> list = dao.selectPresentBoard();
@@ -69,5 +70,14 @@ public class BoardService {
 	public List<BoardVO> selectPopularBoard() {
 		List<BoardVO> list = dao.selectPopularBoard();
 		return list;
+=======
+	
+	public List<BoardVO> selectByCategory(String category, String id){
+		return dao.selectByCategory(category, id);
+	}
+	
+	public void likeIt(int no) {
+		dao.likeIt(no);
+>>>>>>> origin/Ddock2
 	}
 }

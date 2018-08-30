@@ -144,4 +144,39 @@ public class BoardController extends HttpServlet {
 		return mav;
 	}
 	
+	@RequestMapping("/board/blogViewByCategory.do")
+	public ModelAndView viewByCategory(HttpServletRequest request, HttpServletResponse response){
+		ServletContext sc = request.getServletContext();
+		String category = request.getParameter("category");
+		HttpSession session = request.getSession();
+		MemberVO userVO = (MemberVO) session.getAttribute("userVO");
+		String id = null;
+		if(userVO!=null) {
+			id = userVO.getId();
+		}
+		
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		List<BoardVO> boardList = service.selectByCategory(category, id);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/jsp/blog/blogViewByCategory.jsp");
+		mav.addAttribute("category", category);
+		mav.addAttribute("boardList", boardList);
+		
+		return mav;
+	}
+	
+	@RequestMapping("/board/like.do")
+	public ModelAndView like(HttpServletRequest request, HttpServletResponse response) {
+		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		ServletContext sc = request.getServletContext();
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		
+		service.likeIt(board_no);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/blog/detailBoard.do?board_no=" + board_no);
+		
+		return mav;
+	}
 }
