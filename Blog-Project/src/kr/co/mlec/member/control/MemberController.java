@@ -1,4 +1,4 @@
-package kr.co.mlec.login.control;
+package kr.co.mlec.member.control;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -8,11 +8,22 @@ import javax.servlet.http.HttpSession;
 import kr.co.mlec.framework.ModelAndView;
 import kr.co.mlec.framework.annotation.Controller;
 import kr.co.mlec.framework.annotation.RequestMapping;
-import kr.co.mlec.login.service.LoginService;
-import kr.co.mlec.login.vo.LoginVO;
+import kr.co.mlec.member.service.MemberService;
+import kr.co.mlec.member.vo.MemberVO;
 
 @Controller
-public class LoginController {
+public class MemberController {
+
+	@RequestMapping(value = "/member/signUp.do")
+	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return new ModelAndView("/jsp/sign/signUpForm.jsp");
+	}
+	
+	@RequestMapping(value = "/member/signUpProcess.do")
+	public ModelAndView signUpProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return new ModelAndView("/jsp/sign/signUp.jsp");
+	}
+	
 	
 	@RequestMapping("/login/loginForm.do")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response)
@@ -21,7 +32,6 @@ public class LoginController {
 		System.out.println("로그인 메소드 호출...");
 		
 		ModelAndView mav = new ModelAndView("/jsp/login/loginForm.jsp");
-		
 		
 		return mav;
 	}
@@ -32,12 +42,12 @@ public class LoginController {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		LoginVO loginVO = new LoginVO(id, pw);
+		MemberVO loginVO = new MemberVO(id, pw);
 		
 		ServletContext sc = request.getServletContext();
-		LoginService service = (LoginService) sc.getAttribute("loginService");
+		MemberService service = (MemberService) sc.getAttribute("memberService");
 		
-		LoginVO userVO = service.login(loginVO); //범인
+		MemberVO userVO = service.login(loginVO);
 		System.out.println(userVO);
 		
 		ModelAndView mav = new ModelAndView();
@@ -65,5 +75,4 @@ public class LoginController {
 		
 		return new ModelAndView("redirect:" + request.getContextPath());
 	}
-	
 }

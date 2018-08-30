@@ -1,4 +1,4 @@
-drop table id CASCADE CONSTRAINTS;
+drop table b_member CASCADE CONSTRAINTS;
 drop table blog CASCADE CONSTRAINTS;
 drop table b_board CASCADE CONSTRAINTS;
 drop table board_category CASCADE CONSTRAINTS;
@@ -6,7 +6,7 @@ drop table reply CASCADE CONSTRAINTS;
 drop table friend CASCADE CONSTRAINTS;
 drop table friend_req CASCADE CONSTRAINTS;
 
-drop sequence seq_id_no;
+drop sequence seq_b_member_id_no;
 drop sequence seq_blog_no;
 drop sequence seq_board_no;
 drop sequence seq_board_category_no;
@@ -14,8 +14,8 @@ drop sequence seq_reply_no;
 drop sequence seq_friend_no;
 drop sequence seq_friend_req_no;
 
-create sequence seq_id_no;
-create table id (
+create sequence seq_b_member_id_no;
+create table b_member (
         id              varchar2(20)    primary key
     ,   id_no           number(5)       
     ,   password        varchar2(30)    not null
@@ -29,7 +29,7 @@ create table blog (
     ,   visit_total     number(5)       default 0
     ,   reg_date        date            default sysdate
     ,   constraint blog_id_fk foreign key(id)
-        references id(id) on delete cascade
+        references b_member(id) on delete cascade
 );
 create sequence seq_board_no ;
 create table b_board (
@@ -95,11 +95,12 @@ create table friend_req (
 );
 
 -----------------------------------------------------------------------------------------------
--------------------------------------- ID -----------------------------------------------------
+--------------------------------------b_member -----------------------------------------------------
 -----------------------------------------------------------------------------------------------
-insert into id(id, id_no, password) values('qrtz7950', seq_id_no.nextval, 'qrtz7950');
-insert into id(id, id_no, password) values('bmkwak22', seq_id_no.nextval, 'bmkwak22');
-insert into id(id, id_no, password) values('asrbtjd', seq_id_no.nextval, 'asrbtjd');
+insert into b_member(id, id_no, password) values('qwe', seq_b_member_id_no.nextval, 'qwe');
+insert into b_member(id, id_no, password) values('qrtz7950', seq_b_member_id_no.nextval, 'qrtz7950');
+insert into b_member(id, id_no, password) values('bmkwak22', seq_b_member_id_no.nextval, 'bmkwak22');
+insert into b_member(id, id_no, password) values('asrbtjd', seq_b_member_id_no.nextval, 'asrbtjd');
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- blog --------------------------------------------------------
@@ -107,6 +108,7 @@ insert into id(id, id_no, password) values('asrbtjd', seq_id_no.nextval, 'asrbtj
 
 select id, blog_no,visit_today, visit_total, reg_date from blog;
 
+insert into blog(id, blog_no) values('qwe', seq_blog_no.nextval);
 insert into blog(id, blog_no) values('qrtz7950', seq_blog_no.nextval);
 insert into blog(id, blog_no) values('asrbtjd', seq_blog_no.nextval);
 insert into blog(id, blog_no) values('bmkwak22', seq_blog_no.nextval);
@@ -130,6 +132,10 @@ insert into b_board(id, board_no, title, content, tag, category_name) values ('b
 
 select category_no, id, category_name, depth, parent from board_category;
 
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '잡담', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '일상', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '사건', 0);
+insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '카테고리', 0);
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '잡담', 0);
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '일상', 0);
 insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '사건', 0);
@@ -179,7 +185,7 @@ insert into friend_req(req_no, target_id, req_id) values(seq_friend_req_no.nextv
 insert into friend_req(req_no, target_id, req_id) values(seq_friend_req_no.nextval, 'bmkwak22', 'asrbtjd');
 
 
-select * from id;
+select * from b_member;
 select * from b_board;
 select * from board_category;
 select * from reply;

@@ -7,8 +7,10 @@ import javax.servlet.annotation.WebListener;
 
 import kr.co.mlec.board.dao.BoardDAO;
 import kr.co.mlec.board.service.BoardService;
-import kr.co.mlec.login.dao.LoginDAO;
-import kr.co.mlec.login.service.LoginService;
+import kr.co.mlec.member.dao.MemberDAO;
+import kr.co.mlec.member.service.MemberService;
+import kr.co.mlec.reply.dao.ReplyDAO;
+import kr.co.mlec.reply.service.ReplyService;
 
 /**
  * Application Lifecycle Listener implementation class ContextListener
@@ -33,12 +35,14 @@ public class ContextListener implements ServletContextListener {
     	
     	ServletContext sc = event.getServletContext();
     	
-    	sc.setAttribute("boardDAO", new BoardDAO());
     	BoardDAO boardDao = new BoardDAO();
     	sc.setAttribute("boardService", new BoardService(boardDao));
     	
-    	LoginDAO loginDao = new LoginDAO();
-    	sc.setAttribute("loginService", new LoginService(loginDao));
+    	MemberDAO memberDao = new MemberDAO();
+    	sc.setAttribute("memberService", new MemberService(memberDao));
+    	
+    	ReplyDAO replyDao = new ReplyDAO();
+    	sc.setAttribute("replyService", new ReplyService(replyDao));
     }
 	
 }
