@@ -218,5 +218,25 @@ public class BoardDAO {
 		
 		return list;
 	}
-
+	
+	public void upViewCnt(int no) {
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("update b_board " );
+		sql.append("  set view_cnt = view_cnt + 1 ");
+		sql.append(" where board_no = ? ");
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			
+			pstmt.setInt(1, no);
+			
+			pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

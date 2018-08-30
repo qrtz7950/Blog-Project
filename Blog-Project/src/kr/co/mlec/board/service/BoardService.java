@@ -19,8 +19,16 @@ public class BoardService {
 		dao.write(board); 
 	}
 	
-	public BoardVO selectDetailBoardByNo(int no) {
-		return dao.selectDetailBoardByNo(no);
+	public BoardVO selectDetailBoardByNo(int no, MemberVO userVO) {
+		
+		BoardVO board = dao.selectDetailBoardByNo(no);
+		if(userVO!=null && userVO.getId().equals(board.getId())) {
+				return board;
+		}
+		dao.upViewCnt(no);
+		board = dao.selectDetailBoardByNo(no);
+		
+		return board;
 	}
 
 	public List<BoardVO> selectRecentBoard(MemberVO me) {

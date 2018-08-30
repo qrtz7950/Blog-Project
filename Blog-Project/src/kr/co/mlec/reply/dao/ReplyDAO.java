@@ -50,4 +50,30 @@ public class ReplyDAO {
 		return replyList;
 	}
 	
+	
+	public void upload(ReplyVO reply) {
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into reply(reply_no, board_no, id, content, depth, parent, seq) ");
+		sql.append("  values(seq_reply_no.nextval, ?, ?, ?, ?, ?, ?) ");
+		
+		try(
+				Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			
+			pstmt.setInt(1, reply.getBoard_no());
+			pstmt.setString(2, reply.getId());
+			pstmt.setString(3, reply.getContent());
+			pstmt.setInt(4, reply.getDepth());
+			pstmt.setInt(5, reply.getParent());
+			pstmt.setInt(6, reply.getSeq());
+			
+			pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

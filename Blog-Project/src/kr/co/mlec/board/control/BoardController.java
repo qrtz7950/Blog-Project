@@ -113,8 +113,13 @@ public class BoardController extends HttpServlet {
 		
 		BoardService service = (BoardService) sc.getAttribute("boardService");
 		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		
+		
+		HttpSession session = request.getSession();
+		MemberVO userVO = (MemberVO) session.getAttribute("userVO");
+		
 		// 게시글 번호로 게시글 정보 조회
-		BoardVO detailBlogBoard = service.selectDetailBoardByNo(board_no);
+		BoardVO detailBlogBoard = service.selectDetailBoardByNo(board_no, userVO);
 		
 		// 해시태그정리
 		List<String> tags = new ArrayList<String>(Arrays.asList(detailBlogBoard.getTag().split("#")));
