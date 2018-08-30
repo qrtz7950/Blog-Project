@@ -29,9 +29,13 @@
 		}
 	}
 	
-	function checkReply(){
+	function checkReply(num){
 		if(${empty userVO}){
 			alert("로그인을 해야 이용할수 있습니다");
+			return false;
+		}
+		if(document.getElementById("replyContent"+num).value == ""){
+			alert("글을 입력해주세요")
 			return false;
 		}
 		return true;
@@ -113,9 +117,13 @@
 								</c:if>
 							</div>
 							<div id="replyInput${status.count}" style="display: none;">
-								<form action="#">
+								<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply(${status.count})">
 									<div class="input-group" style="width: 95%;  margin: 0 auto;">
-										  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" aria-label="reply" aria-describedby="button-addon2"></textarea>
+										  <input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
+										  <input type="hidden" name="id" value="${sessionScope.userVO.id}">
+										  <input type="hidden" name="depth" value="1">
+										  <input type="hidden" name="seq" value="${reply.seq}">
+										  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" name="content" id="replyContent${status.count}"></textarea>
 										  <div class="input-group-append">
 										    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">댓글달기</button>
 										  </div>
@@ -128,19 +136,20 @@
 							<c:set var="replySeqMax" value="${reply.seq}" scope="page" />
 						</c:if>
 					</c:forEach>
-					
-					<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply()">
-						<div class="input-group" style="width:95%;  margin: 0 auto;">
-							  <input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
-							  <input type="hidden" name="id" value="${sessionScope.userVO.id}">
-							  <input type="hidden" name="depth" value="0">
-							  <input type="hidden" name="seq" value="${pageScope.replySeqMax+1}">							  
-							  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" name="content"></textarea>
-							  <div class="input-group-append">
-							    <button class="btn btn-outline-secondary" type="submit" id="button-addon">댓글달기</button>
-							  </div>
-						</div>
-					</form>
+					<div id="replyInput0">
+						<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply(0)">
+							<div class="input-group" style="width:95%;  margin: 0 auto;">
+								  <input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
+								  <input type="hidden" name="id" value="${sessionScope.userVO.id}">
+								  <input type="hidden" name="depth" value="0">
+								  <input type="hidden" name="seq" value="${pageScope.replySeqMax+1}">							  
+								  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" name="content" id="replyContent0"></textarea>
+								  <div class="input-group-append">
+								    <button class="btn btn-outline-secondary" type="submit" id="button-addon">댓글달기</button>
+								  </div>
+							</div>
+						</form>
+					</div>
 				</div>
 				<br>
 			</div>

@@ -16,13 +16,7 @@ public class BlogController {
 	public ModelAndView myBlog(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		System.out.println("myBlog() 호출...");
-		
-		HttpSession session = request.getSession();
-		MemberVO me =  (MemberVO) session.getAttribute("userVO");
-		
-		System.out.println(me);
-		
+
 		return new ModelAndView("");
 	}
-	
 }

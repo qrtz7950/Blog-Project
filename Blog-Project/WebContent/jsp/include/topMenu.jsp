@@ -11,19 +11,21 @@
  
 <div align="center">
 	<div align="center">
-		<a style="font-size: 30pt;" >${ me.id }의 블로그</a>
+		<a style="font-size: 30pt;" >${ userVO.id }의 블로그</a>
 	</div>
 	<div align="right">
 		<c:choose>
 			<c:when test="${empty userVO}">
-				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/loginForm.do'">로그인</button>
-				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/member/signUp.do'">회원가입</button>
+				<form action="${pageContext.request.contextPath}/login/loginForm.do" method="post">
+				<input type="submit" name="select" value="Login" class="btn btn-outline-secondary btn-sm">
+				<input type="submit" name="select" value="regiseter" class="btn btn-outline-secondary btn-sm">
+				</form>
 			</c:when>
 			<c:otherwise>
 				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
 				<form action="${pageContext.request.contextPath}/myBlog.do" method="post">
-				<input type="hidden" name="blogID" value="${ userVO.id }">
-				<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
+					<input type="hidden" name="blogID" value="${ userVO.id }">
+					<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
 				</form>
 				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
 			</c:otherwise>

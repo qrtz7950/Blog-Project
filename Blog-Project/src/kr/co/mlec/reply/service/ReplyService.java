@@ -18,7 +18,7 @@ public class ReplyService {
 		return dao.selectReplyByBoardNo(no);
 	}
 	
-	public void write() {
-		
+	public void write(ReplyVO reply) {
+		dao.upload(reply);
 	}
 }
