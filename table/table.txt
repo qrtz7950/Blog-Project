@@ -1,4 +1,4 @@
-﻿drop table b_member CASCADE CONSTRAINTS;
+drop table b_member CASCADE CONSTRAINTS;
 drop table blog CASCADE CONSTRAINTS;
 drop table b_board CASCADE CONSTRAINTS;
 drop table board_category CASCADE CONSTRAINTS;
@@ -162,11 +162,11 @@ select reply_no, board_no, id, content, depth, parent, seq, reg_date from reply;
 
 insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 0, 1);
 insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 1, 1, 1);
-insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 2, 1, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 1, 1, 1);
 insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 0, 2);
 insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 0, 1);
 insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 1, 4, 1);
-insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 2, 5, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 1, 5, 1);
 insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 0, 1);
 insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 1,7, 1);
 insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 1,7, 1);
