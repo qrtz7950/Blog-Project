@@ -14,7 +14,7 @@
     String clientSecret = "8NfRAvUqfj";//애플리케이션 클라이언트 시크릿값";
     String code = request.getParameter("code");
     String state = request.getParameter("state");
-    String redirectURI = URLEncoder.encode("YOUR_CALLBACK_URL", "UTF-8");
+    String redirectURI = URLEncoder.encode("http://localhost:8000/Blog-Project", "UTF-8");
     String apiURL;
     apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";
     apiURL += "client_id=" + clientId;
