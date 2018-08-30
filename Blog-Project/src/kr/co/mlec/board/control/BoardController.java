@@ -81,7 +81,6 @@ public class BoardController extends HttpServlet {
 		// 댓글 정보 가져오기
 		ReplyService replyService = (ReplyService) sc.getAttribute("replyService");
 		List<ReplyVO> replyList = replyService.selectReplyByBoardNo(board_no);
-		// 댓글 정보 정렬
 		
 		
 		ModelAndView mav = new ModelAndView();

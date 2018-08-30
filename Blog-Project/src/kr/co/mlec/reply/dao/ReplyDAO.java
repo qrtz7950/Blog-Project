@@ -18,6 +18,7 @@ public class ReplyDAO {
 		sql.append("select reply_no, board_no, id, content, depth, parent, seq, to_char(reg_date ,'yyyy-mm-dd') as reg_date");
 		sql.append("  from reply ");
 		sql.append("  where board_no = ? ");
+		sql.append("  order by seq asc, reply_no asc ");
 		
 		try(
 				Connection conn = ConnectionFactory.getConnection();

@@ -1,5 +1,6 @@
 package kr.co.mlec.reply.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import kr.co.mlec.reply.dao.ReplyDAO;
@@ -13,7 +14,11 @@ public class ReplyService {
 		this.dao = dao;
 	}
 	
-	public List<ReplyVO> selectReplyByBoardNo(int no) {
+	public List<ReplyVO> selectReplyByBoardNo(int no) {			
 		return dao.selectReplyByBoardNo(no);
+	}
+	
+	public void write() {
+		
 	}
 }

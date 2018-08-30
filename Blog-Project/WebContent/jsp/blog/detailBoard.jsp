@@ -28,6 +28,14 @@
 			con.style.display = 'none';
 		}
 	}
+	
+	function checkReply(){
+		if(${empty userVO}){
+			alert("로그인을 해야 이용할수 있습니다");
+			return false;
+		}
+		return true;
+	}
 </script>
 <style>
 	div{
@@ -100,11 +108,13 @@
 								<div class="replyForm1">${reply.id}</div>
 								<div class="replyForm2" style="width: ${55-reply.depth*1}%">${reply.content}</div>
 								<div class="replyForm3">${reply.reg_date}</div>
-								<div class="replyForm4"><a href="javascript:void(0)" onclick="displayReplyInput(${status.count})" style="text-decoration: none;")>답하기</a></div>
+								<c:if test="${reply.depth==0}">
+									<div class="replyForm4"><a href="javascript:void(0)" onclick="displayReplyInput(${status.count})" style="text-decoration: none;")>답하기</a></div>
+								</c:if>
 							</div>
 							<div id="replyInput${status.count}" style="display: none;">
 								<form action="#">
-									<div class="input-group" style="width: 95%;">
+									<div class="input-group" style="width: 95%;  margin: 0 auto;">
 										  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" aria-label="reply" aria-describedby="button-addon2"></textarea>
 										  <div class="input-group-append">
 										    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">댓글달기</button>
@@ -114,11 +124,18 @@
 							</div>
 							<hr>
 						</div>
+						<c:if test="${status.count==replyList.size()}">
+							<c:set var="replySeqMax" value="${reply.seq}" scope="page" />
+						</c:if>
 					</c:forEach>
-				
-					<form action="#">
+					
+					<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply()">
 						<div class="input-group" style="width:95%;  margin: 0 auto;">
-							  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" aria-label="reply" aria-describedby="button-addon2"></textarea>
+							  <input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
+							  <input type="hidden" name="id" value="${sessionScope.userVO.id}">
+							  <input type="hidden" name="depth" value="0">
+							  <input type="hidden" name="seq" value="${pageScope.replySeqMax+1}">							  
+							  <textarea type="text" class="form-control" placeholder="남기고 싶은 댓글을 남기세요" name="content"></textarea>
 							  <div class="input-group-append">
 							    <button class="btn btn-outline-secondary" type="submit" id="button-addon">댓글달기</button>
 							  </div>
