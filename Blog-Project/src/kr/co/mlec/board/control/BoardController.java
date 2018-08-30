@@ -165,4 +165,18 @@ public class BoardController extends HttpServlet {
 		
 		return mav;
 	}
+	
+	@RequestMapping("/board/like.do")
+	public ModelAndView like(HttpServletRequest request, HttpServletResponse response) {
+		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		ServletContext sc = request.getServletContext();
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		
+		service.likeIt(board_no);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/blog/detailBoard.do?board_no=" + board_no);
+		
+		return mav;
+	}
 }

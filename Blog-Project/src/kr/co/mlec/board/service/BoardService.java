@@ -64,4 +64,8 @@ public class BoardService {
 	public List<BoardVO> selectByCategory(String category, String id){
 		return dao.selectByCategory(category, id);
 	}
+	
+	public void likeIt(int no) {
+		dao.likeIt(no);
+	}
 }

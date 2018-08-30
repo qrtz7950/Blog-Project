@@ -40,6 +40,14 @@
 		}
 		return true;
 	}
+	
+	function checkLogin(num){
+		if(${empty userVO}){
+			alert("로그인을 해야 이용할수 있습니다");
+			return false;
+		}
+		return true;
+	}
 </script>
 <style>
 	div{
@@ -87,7 +95,10 @@
 				<table width="100%">
 					<tr>
 						<td width="10%">
-							<button id="like" type="submit" class="btn btn-light btn-sm" ><img src="${ pageContext.request.contextPath }/img/like.jpg" /></button>
+							<form action="${pageContext.request.contextPath}/board/like.do" onsubmit="return checkLogin()" method="post">
+								<input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
+								<button id="like" type="submit" class="btn btn-light btn-sm" ><img src="${ pageContext.request.contextPath }/img/like.jpg" /></button>
+							</form>
 						</td>
 						<td colspan="3">
 							<sub>${detailBlogBoard.like_cnt}명이 이 게시물을 좋아합니다</sub>
@@ -117,7 +128,7 @@
 								</c:if>
 							</div>
 							<div id="replyInput${status.count}" style="display: none;">
-								<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply(${status.count})">
+								<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply(${status.count})" method="post">
 									<div class="input-group" style="width: 95%;  margin: 0 auto;">
 										  <input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
 										  <input type="hidden" name="id" value="${sessionScope.userVO.id}">
@@ -137,7 +148,7 @@
 						</c:if>
 					</c:forEach>
 					<div id="replyInput0">
-						<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply(0)">
+						<form action="${pageContext.request.contextPath}/reply/write.do" onsubmit="return checkReply(0)" method="post">
 							<div class="input-group" style="width:95%;  margin: 0 auto;">
 								  <input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
 								  <input type="hidden" name="id" value="${sessionScope.userVO.id}">
