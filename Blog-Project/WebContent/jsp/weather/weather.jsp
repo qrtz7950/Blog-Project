@@ -7,7 +7,7 @@
         <title>전국주간날씨</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <!-- <script type="text/javascript" src="jquery.ajax-cross-origin.min.js"></script> --><!-- 크로스도메인 해결 플러그인 -->
+        <script type="text/javascript" src="jquery.ajax-cross-origin.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script type="text/javascript">
         $(document).ready(function(){

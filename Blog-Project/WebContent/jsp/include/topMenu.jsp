@@ -21,14 +21,11 @@
 			</c:when>
 			<c:otherwise>
 				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
-<<<<<<< HEAD
 				<form action="${pageContext.request.contextPath}/myBlog.do" method="post">
 				<input type="hidden" name="blogID" value="${ userVO.id }">
 				<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
 				</form>
-=======
 				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
->>>>>>> origin/gs3
 			</c:otherwise>
 		</c:choose>
 		<br>
