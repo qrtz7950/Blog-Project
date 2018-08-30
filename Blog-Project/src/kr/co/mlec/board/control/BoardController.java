@@ -1,18 +1,57 @@
 package kr.co.mlec.board.control;
 
+import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.co.mlec.board.service.BoardService;
 import kr.co.mlec.board.vo.BoardVO;
 import kr.co.mlec.framework.ModelAndView;
 import kr.co.mlec.framework.annotation.Controller;
 import kr.co.mlec.framework.annotation.RequestMapping;
+import kr.co.mlec.member.vo.MemberVO;
 
 @Controller
 public class BoardController extends HttpServlet {
+	
+	@RequestMapping("/myBlog.do")
+	public ModelAndView mainView(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		System.out.println("mainView() 호출...");
+				
+		ServletContext sc = request.getServletContext();
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		
+		HttpSession session = request.getSession();
+		MemberVO me =  (MemberVO) session.getAttribute("userVO");
+		
+		List<BoardVO> recentBoard = service.selectRecentReplyList(me);
+		
+		BoardVO presentBoard = service.selectPresentBoard(me);
+		
+		BoardVO popularBoard = service.selectPopularBoard();
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/bloghome.jsp");
+		mav.addAttribute("member", me);
+		mav.addAttribute("recentBoard", recentBoard);
+		mav.addAttribute("presentBoard", presentBoard);
+		mav.addAttribute("popularBoard", popularBoard);
+		
+		System.out.println("지금 이 블로그의 주인 : " + me.getId());
+		System.out.println("최근글\n");
+		System.out.println(recentBoard);
+		System.out.println("대표글\n");
+		System.out.println(presentBoard);
+		System.out.println("인기글\n");
+		System.out.println(popularBoard);
+		
+		return mav;
+	}
 	
 	@RequestMapping("/writeForm.do")
 	public ModelAndView write(HttpServletRequest request, HttpServletResponse response) throws Exception {

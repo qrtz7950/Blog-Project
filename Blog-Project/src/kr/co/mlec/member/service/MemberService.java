@@ -14,4 +14,8 @@ public class MemberService {
 	public MemberVO login(MemberVO loginVO) {
 		return dao.login(loginVO);
 	}
+
+	public void signUp(MemberVO member) {
+		dao.signUp(member);
+	}
 }

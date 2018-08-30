@@ -14,13 +14,26 @@ import kr.co.mlec.member.vo.MemberVO;
 @Controller
 public class MemberController {
 
-	@RequestMapping(value = "/member/signUp.do")
+	@RequestMapping("/member/signUp.do")
 	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return new ModelAndView("/jsp/sign/signUpForm.jsp");
 	}
 	
-	@RequestMapping(value = "/member/signUpProcess.do")
+	@RequestMapping("/member/signUpProcess.do")
 	public ModelAndView signUpProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String id = request.getParameter("username");
+		String pw = request.getParameter("password");
+				
+		MemberVO member = new MemberVO();
+		member.setId(id);
+		member.setPw(pw);
+		
+		ServletContext sc = request.getServletContext();
+		MemberService service = (MemberService) sc.getAttribute("memberService");
+		
+		service.signUp(member);
+		
 		return new ModelAndView("/jsp/sign/signUp.jsp");
 	}
 	

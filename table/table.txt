@@ -1,4 +1,4 @@
-drop table b_member CASCADE CONSTRAINTS;
+﻿drop table b_member CASCADE CONSTRAINTS;
 drop table blog CASCADE CONSTRAINTS;
 drop table b_board CASCADE CONSTRAINTS;
 drop table board_category CASCADE CONSTRAINTS;
@@ -25,6 +25,7 @@ create sequence seq_blog_no;
 create table blog (
         id              varchar2(20)    primary key
     ,   blog_no         number(5)       
+    ,   present_board   number(5)
     ,   visit_today     number(5)       default 0
     ,   visit_total     number(5)       default 0
     ,   reg_date        date            default sysdate
@@ -53,6 +54,7 @@ create table board_category (
     ,   category_name       varchar2(50)    not null
     ,   depth               number(3)       not null
     ,   parent              number(3)
+    ,   seq                 number(3)       not null
     ,   constraint board_category_id_fk foreign key(id)
         references blog(id) on delete cascade
 );
@@ -65,6 +67,7 @@ create table reply (
     ,   content     varchar2(500)  not null    
     ,   depth       number(3)      not null
     ,   parent      number(3)
+    ,   seq         number(3)      not null
     ,   reg_date    date           default sysdate
     ,   constraint reply_board_no_fk foreign key(board_no)
         references b_board(board_no) on delete cascade
@@ -108,10 +111,10 @@ insert into b_member(id, id_no, password) values('asrbtjd', seq_b_member_id_no.n
 
 select id, blog_no,visit_today, visit_total, reg_date from blog;
 
-insert into blog(id, blog_no) values('qwe', seq_blog_no.nextval);
-insert into blog(id, blog_no) values('qrtz7950', seq_blog_no.nextval);
-insert into blog(id, blog_no) values('asrbtjd', seq_blog_no.nextval);
-insert into blog(id, blog_no) values('bmkwak22', seq_blog_no.nextval);
+insert into blog(id, blog_no, present_board) values('qwe', seq_blog_no.nextval, 7);
+insert into blog(id, blog_no, present_board) values('qrtz7950', seq_blog_no.nextval, 2);
+insert into blog(id, blog_no, present_board) values('asrbtjd', seq_blog_no.nextval, 3);
+insert into blog(id, blog_no, present_board) values('bmkwak22', seq_blog_no.nextval, 5);
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- B_BOARD -----------------------------------------------------
@@ -119,6 +122,8 @@ insert into blog(id, blog_no) values('bmkwak22', seq_blog_no.nextval);
 
 select id, board_no, view_cnt, title, content, tag, category_name, like_cnt, reg_date from b_board;
 
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qwe', seq_board_no.nextval,'안녕', '하세요', '#매워매워#으아아아악', '잡담');
+insert into b_board(id, board_no, title, content, tag, category_name) values ('qwe', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워#으아아아악', '잡담');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'안녕', '하세요', '#매워매워#으아아아악', '잡담');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('qrtz7950', seq_board_no.nextval,'여기오면 이글부터 봐라', 'eagle', '#매워매워#으아아아악', '잡담');
 insert into b_board(id, board_no, title, content, tag, category_name) values ('asrbtjd', seq_board_no.nextval,'안녕', '하세요', '#매워매워#으아아아악', '잡담');
@@ -132,39 +137,39 @@ insert into b_board(id, board_no, title, content, tag, category_name) values ('b
 
 select category_no, id, category_name, depth, parent from board_category;
 
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '잡담', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '일상', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '사건', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qwe', '카테고리', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '잡담', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '일상', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '사건', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'qrtz7950', '카테고리', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', '잡담', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', '일상', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', '사건', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'bmkwak22', '카테고리', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', '잡담', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', '일상', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', '사건', 0);
-insert into board_category(category_no, id, category_name, depth) values(seq_board_category_no.nextval, 'asrbtjd', '카테고리', 0);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qwe', '잡담', 0, 1);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qwe', '일상', 0, 2);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qwe', '사건', 0, 3);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qwe', '카테고리', 0, 4);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qrtz7950', '잡담', 0, 1);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qrtz7950', '일상', 0, 2);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qrtz7950', '사건', 0, 3);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'qrtz7950', '카테고리', 0, 4);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'bmkwak22', '잡담', 0, 1);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'bmkwak22', '일상', 0, 2);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'bmkwak22', '사건', 0, 3);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'bmkwak22', '카테고리', 0, 4);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'asrbtjd', '잡담', 0, 1);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'asrbtjd', '일상', 0, 2);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'asrbtjd', '사건', 0, 3);
+insert into board_category(category_no, id, category_name, depth, seq) values(seq_board_category_no.nextval, 'asrbtjd', '카테고리', 0, 4);
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- board_reply -------------------------------------------------
 -----------------------------------------------------------------------------------------------
 
-select reply_no, board_no, id, content, depth, parent reg_date from reply;
+select reply_no, board_no, id, content, depth, parent, seq, reg_date from reply;
 
-insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 0);
-insert into reply(reply_no, board_no, id, content, depth, parent) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 1, 1);
-insert into reply(reply_no, board_no, id, content, depth, parent) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 2, 1);
-insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 0);
-insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 0);
-insert into reply(reply_no, board_no, id, content, depth, parent) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 1, 4);
-insert into reply(reply_no, board_no, id, content, depth, parent) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 2, 5);
-insert into reply(reply_no, board_no, id, content, depth) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 0);
-insert into reply(reply_no, board_no, id, content, depth, parent) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 1,7);
-insert into reply(reply_no, board_no, id, content, depth, parent) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 1,7);
+insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 0, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 1, 1, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 2, 1, 1);
+insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 1, 'qrtz7950', '하하하하하하ㅏ', 0, 2);
+insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 0, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 1, 4, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 2, 'bmkwak22', '하하하하하하ㅏ', 2, 5, 1);
+insert into reply(reply_no, board_no, id, content, depth, seq) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 0, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 1,7, 1);
+insert into reply(reply_no, board_no, id, content, depth, parent, seq) values(seq_reply_no.nextval, 3, 'asrbtjd', '하하하하하하ㅏ', 1,7, 1);
 
 -----------------------------------------------------------------------------------------------
 --------------------------------- friend -----------------------------------------------------

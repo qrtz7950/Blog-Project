@@ -14,7 +14,7 @@
     <meta name="author" content=""> -->
 	<link rel="icon" href="https://getbootstrap.com/favicon.ico">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Blog Template for Bootstrap</title>
+    <title>${ me.id }의 블로그</title>
     
  <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -43,11 +43,9 @@
 	
 	<br>
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">블로그 대표글</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+          <h1 class="display-4 font-italic">${ presentBoard.title }</h1>
+          <p class="lead my-3">${ presentBoard.content }</p>
           <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-        </div>
       </div>
 
       <div class="row mb-2">
@@ -56,16 +54,15 @@
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-primary">인기 게시글</strong>
               <h3 class="mb-0">
-                <a class="text-dark" href="#">인기 게시글 제목</a>
+                <a class="text-dark" href="#">${ popularBoard.title }</a>
               </h3>
-						<div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">인기 게시글 내용</a>
+						<div class="mb-1 text-muted">${ popularBoard.reg_date }</div>
+              <p class="card-text mb-auto"></a>
 						<div class="card" style="width: 18rem;">
 							<img class="card-img-top" src="https://t1.daumcdn.net/cfile/tistory/2726D84C5478A7572D"
 								alt="Card image cap">
 							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
+								<p class="card-text">${ popularBoard.content }</p>
 							</div>
 						</div>
             </div>
@@ -110,12 +107,12 @@
 			<th>등록일</th>
 		</tr>
 		<h2>전체 게시글 목록</h2>
-			<c:forEach items="${ boardList }" var="board">
+			<c:forEach items="${ recentBoard }" var="board">
 				<tr>
-					<td>${board.no }</td>
+					<td>${board.board_no }</td>
 					<td>${board.title }</td>
-					<td>${board.writer }</td>
-					<td>${board.regDate }</td>
+					<td>${board.id }</td>
+					<td>${board.reg_date }</td>
 				</tr>
 			</c:forEach>
 		</table>
