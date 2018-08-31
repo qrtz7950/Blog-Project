@@ -22,15 +22,14 @@
 				</form>
 			</c:when>
 			<c:otherwise>
-				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
 				<form action="${pageContext.request.contextPath}/myBlog.do" method="post">
 					<input type="hidden" name="blogID" value="${ userVO.id }">
 					<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
+					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
+					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
 				</form>
-				<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
 			</c:otherwise>
 		</c:choose>
-		<br>
 		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/writeForm.do'" style="margin-top: 10px; margin-bottom: 10px">글쓰기</button>
 		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/friend/friendPlus.jsp'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
 	</div>
@@ -40,7 +39,6 @@
 	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=잡담'">잡담</button>
 	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=일상'">일상</button>
 	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=사건'">사건</button>
-	
 	  <div class="btn-group" role="group">
 	    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	       	카테고리
