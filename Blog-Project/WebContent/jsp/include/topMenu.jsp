@@ -30,7 +30,7 @@
 		</c:choose>
 		<br>
 		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/writeForm.do'" style="margin-top: 10px; margin-bottom: 10px">글쓰기</button>
-		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/friend/friendPlus.jsp'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
+		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/friend/friendPlus.do'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
 	</div>
 </div>
 <div style="background-color: #6B747C;">
