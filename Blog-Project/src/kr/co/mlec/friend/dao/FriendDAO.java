@@ -31,7 +31,7 @@ public class FriendDAO {
 				friendVO = new FriendVO();
 				friendVO.setTarget_id(rs.getString("target_id"));
 				
-				String req_id = rs.getReq_id("req_id");
+				String req_id = rs.getString("req_id");
 				FriendVO friend = new FriendVO();
 				friend.setReq_id(req_id);
 				
