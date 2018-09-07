@@ -25,16 +25,22 @@
 				<form action="${pageContext.request.contextPath}/blogHome.do?blogHost=${userVO.id}" method="post">
 					<input type="hidden" name="blogID" value="${ userVO.id }">
 					<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
-					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
+					<c:if test="${userVO.id == param.blogHost}">
+						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
+					</c:if>
 					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
 				</form>
+				<c:if test="${userVO.id == param.blogHost}">
+					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/writeForm.do?blogHost=${param.blogHost}'" style="margin-top: 10px; margin-bottom: 10px">글쓰기</button>
+				</c:if>
+				<c:if test="${userVO.id != param.blogHost}">
+					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/friend/friendPlus.jsp'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
+				</c:if>
 			</c:otherwise>
 		</c:choose>
-		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/writeForm.do'" style="margin-top: 10px; margin-bottom: 10px">글쓰기</button>
-		<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/friend/friendPlus.jsp'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
 	</div>
 </div>
-<div style="background-color: #6B747C;">
+<div style="background-color: #6B747C; margin-top: 5px;">
 	<div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="background-color: #6B747C;">
 	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?blogHost=${param.blogHost}&category=잡담'">잡담</button>
 	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?blogHost=${param.blogHost}&category=일상'">일상</button>

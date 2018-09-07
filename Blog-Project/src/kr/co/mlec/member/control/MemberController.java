@@ -94,6 +94,6 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		return new ModelAndView("redirect:" + request.getContextPath());
+		return new ModelAndView("redirect:" + request.getContextPath()+"/index.do");
 	}
 }
