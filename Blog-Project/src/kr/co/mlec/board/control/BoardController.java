@@ -29,18 +29,16 @@ public class BoardController extends HttpServlet {
 		MemberVO blogHost = new MemberVO();
 		blogHost.setId(request.getParameter("blogHost"));
 		
-		
 		System.out.println("mainView() 호출...");
 				
 		ServletContext sc = request.getServletContext();
-		BoardService service = (BoardService) sc.getAttribute("boardService");
-		
-		HttpSession session = request.getSession();
-	
-		List<BoardVO> recentBoard = service.selectRecentReplyList(blogHost);
-		
-		BoardVO presentBoard = service.selectPresentBoard(blogHost);
-		BoardVO popularBoard = service.selectPopularBoard(blogHost);
+		BoardService boardservice = (BoardService) sc.getAttribute("boardService");
+		ReplyService replyservice = (ReplyService) sc.getAttribute("replyService");
+
+		List<ReplyVO> recentReplyList = replyservice.selectRecentReplyList(blogHost);
+		List<BoardVO> recentBoard = boardservice.selectRecentBoardList(blogHost);
+		BoardVO presentBoard = boardservice.selectPresentBoard(blogHost);
+		BoardVO popularBoard = boardservice.selectPopularBoard(blogHost);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/bloghome.jsp?" + blogHost);
@@ -48,14 +46,17 @@ public class BoardController extends HttpServlet {
 		mav.addAttribute("recentBoard", recentBoard);
 		mav.addAttribute("presentBoard", presentBoard);
 		mav.addAttribute("popularBoard", popularBoard);
+		mav.addAttribute("recentReplyList", recentReplyList);
 		
-		System.out.println("지금 이 블로그의 주인 : " + blogHost);
-		System.out.println("최근글\n");
-		System.out.println(recentBoard);
-		System.out.println("대표글\n");
-		System.out.println(presentBoard);
-		System.out.println("인기글\n");
-		System.out.println(popularBoard);
+//		System.out.println("지금 이 블로그의 주인 : " + blogHost);
+//		System.out.println("최근글\n");
+//		System.out.println(recentBoard);
+//		System.out.println("대표글\n");
+//		System.out.println(presentBoard);
+//		System.out.println("인기글\n");
+//		System.out.println(popularBoard);
+		System.out.println("메인뷰");
+		System.out.println(recentReplyList);
 		
 		return mav;
 	}

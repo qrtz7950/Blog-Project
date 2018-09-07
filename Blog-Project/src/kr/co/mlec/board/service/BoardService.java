@@ -49,12 +49,6 @@ public class BoardService {
 		return presentBoard;
 	}
 
-	public List<BoardVO> selectRecentReplyList(MemberVO me) {
-		
-		List<BoardVO> list = dao.selectRecentReplyList(me);
-		return list;
-	}
-
 	public List<BoardVO> selectPresentBoard() {
 		List<BoardVO> list = dao.selectPresentBoard();
 		return list;
@@ -76,5 +70,9 @@ public class BoardService {
 	
 	public void likeIt(int no) {
 		dao.likeIt(no);
+	}
+
+	public List<BoardVO> selectRecentBoardList(MemberVO blogHost) {
+		return dao.selectRecentBoardList(blogHost);
 	}
 }

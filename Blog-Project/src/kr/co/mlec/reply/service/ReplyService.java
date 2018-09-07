@@ -3,6 +3,7 @@ package kr.co.mlec.reply.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.co.mlec.member.vo.MemberVO;
 import kr.co.mlec.reply.dao.ReplyDAO;
 import kr.co.mlec.reply.vo.ReplyVO;
 
@@ -20,5 +21,9 @@ public class ReplyService {
 	
 	public void write(ReplyVO reply) {
 		dao.upload(reply);
+	}
+
+	public List<ReplyVO> selectRecentReplyList(MemberVO blogHost) {
+		return dao.selectRecentReplyList(blogHost);
 	}
 }
