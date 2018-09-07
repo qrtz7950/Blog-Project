@@ -11,7 +11,7 @@
  
 <div align="center">
 	<div align="center">
-		<a href="${pageContext.request.contextPath}/myBlog.do" style="font-size: 30pt;" >${ userVO.id }의 블로그</a>
+		<a href="${pageContext.request.contextPath}/blogHome.do?blogHost=${param.blogHost}" style="font-size: 30pt;" >${param.blogHost}의 블로그</a>
 	</div>
 	<div align="right">
 		<c:choose>
@@ -22,7 +22,7 @@
 				</form>
 			</c:when>
 			<c:otherwise>
-				<form action="${pageContext.request.contextPath}/myBlog.do" method="post">
+				<form action="${pageContext.request.contextPath}/blogHome.do?blogHost=${userVO.id}" method="post">
 					<input type="hidden" name="blogID" value="${ userVO.id }">
 					<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
 					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
@@ -36,9 +36,9 @@
 </div>
 <div style="background-color: #6B747C;">
 	<div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="background-color: #6B747C;">
-	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=잡담'">잡담</button>
-	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=일상'">일상</button>
-	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?category=사건'">사건</button>
+	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?blogHost=${param.blogHost}&category=잡담'">잡담</button>
+	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?blogHost=${param.blogHost}&category=일상'">일상</button>
+	  <button type="button" class="btn btn-secondary" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByCategory.do?blogHost=${param.blogHost}&category=사건'">사건</button>
 	  <div class="btn-group" role="group">
 	    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	       	카테고리

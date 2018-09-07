@@ -57,7 +57,7 @@ table.type11 tr:hover{
 				    </tr>
 				    <c:forEach var="board" items="${boardList}">
 					    <tr>
-					        <td onclick="location.href='${pageContext.request.contextPath}/blog/detailBoard.do?board_no=${board.board_no}'">${board.title}</th>
+					        <td onclick="location.href='${pageContext.request.contextPath}/blog/detailBoard.do?blogHost=${param.blogHost}&board_no=${board.board_no}'">${board.title}</th>
 					        <td>${board.reg_date}</th>
 					        <td>${board.view_cnt}</th>
 					    </tr>

@@ -23,8 +23,12 @@ import kr.co.mlec.reply.vo.ReplyVO;
 @Controller
 public class BoardController extends HttpServlet {
 	
-	@RequestMapping("/myBlog.do")
+	@RequestMapping("/blogHome.do")
 	public ModelAndView mainView(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		MemberVO blogHost = new MemberVO();
+		blogHost.setId(request.getParameter("blogHost"));
+		
 		
 		System.out.println("mainView() 호출...");
 				
@@ -32,21 +36,20 @@ public class BoardController extends HttpServlet {
 		BoardService service = (BoardService) sc.getAttribute("boardService");
 		
 		HttpSession session = request.getSession();
-		MemberVO me =  (MemberVO) session.getAttribute("userVO");
 	
-		List<BoardVO> recentBoard = service.selectRecentReplyList(me);
+		List<BoardVO> recentBoard = service.selectRecentReplyList(blogHost);
 		
-		BoardVO presentBoard = service.selectPresentBoard(me);
-		BoardVO popularBoard = service.selectPopularBoard(me);
+		BoardVO presentBoard = service.selectPresentBoard(blogHost);
+		BoardVO popularBoard = service.selectPopularBoard(blogHost);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setView("/bloghome.jsp");
-		mav.addAttribute("member", me);
+		mav.setView("/bloghome.jsp?" + blogHost);
+		mav.addAttribute("member", blogHost);
 		mav.addAttribute("recentBoard", recentBoard);
 		mav.addAttribute("presentBoard", presentBoard);
 		mav.addAttribute("popularBoard", popularBoard);
 		
-		System.out.println("지금 이 블로그의 주인 : " + me.getId());
+		System.out.println("지금 이 블로그의 주인 : " + blogHost);
 		System.out.println("최근글\n");
 		System.out.println(recentBoard);
 		System.out.println("대표글\n");
@@ -108,6 +111,9 @@ public class BoardController extends HttpServlet {
 	@RequestMapping(value="/blog/detailBoard.do")
 	public ModelAndView viewDetailBoard(HttpServletRequest request, HttpServletResponse response)
 				throws Exception{
+		
+		MemberVO blogHost = new MemberVO();
+		blogHost.setId(request.getParameter("blogHost")); 
 		
 		ServletContext sc = request.getServletContext();
 		
