@@ -5,9 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script>
-	var friendId = prompt("친구신청을 하고싶은 대상의 ID를 입력하세요" ,"");
-	var bool = confirm(friendId + " 님에게 친구 신청을 보냅니다");
+<script type="text/javascript">
+	var friendId = prompt("친구신청을 하고싶은 대상의 ID를 입력하세요","");
+	if(friendId == ""){
+		alert("친구신청을 하고싶은 ID를 입력해야 합니다");
+		location.href = "${pageContext.request.contextPath}";
+	}
+	var bool = confirm(friendId + " 님이 맞습니까?");
 	if(bool){
 		alert(friendId + " 님에게 친구 신청을 보냈습니다.");
 		location.href = "${pageContext.request.contextPath}";

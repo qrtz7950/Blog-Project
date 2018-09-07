@@ -25,7 +25,8 @@ import javax.servlet.http.HttpServletResponse;
 							  value = "kr.co.mlec.board.control.BoardController"
 							  		+ "|kr.co.mlec.member.control.MemberController"
 									+ "|kr.co.mlec.blog.control.BlogController"
-							  		+ "|kr.co.mlec.reply.control.ReplyController")
+							  		+ "|kr.co.mlec.reply.control.ReplyController"
+									+ "|kr.co.mlec.friend.control.FriendController")
 		})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

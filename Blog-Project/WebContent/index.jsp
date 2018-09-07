@@ -58,9 +58,15 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+<<<<<<< HEAD
         <li class="active"><a href="${pageContext.request.contextPath}/index.do">Home</a></li>
         <c:if test="${ not empty userVO }">
         	<li><a href="${pageContext.request.contextPath}/blogHome.do?blogHost=${userVO.id}">MyBlog</a></li>
+=======
+        <li class="active"><a href="#">Home</a></li>
+        <c:if test="${ not empty userVO }">
+        	<li><a href="${pageContext.request.contextPath}/myBlog.do">MyBlog</a></li>
+>>>>>>> origin/gs3
         </c:if>
       </ul>
       <form action="${pageContext.request.contextPath}/login/loginForm.do" method="post">
@@ -88,7 +94,11 @@
 	      <h6>친구 추천</h6>
 	      	<div align="left" style="padding: 40px;">
 		      <c:forEach items="${ friend }" var="fri">
+<<<<<<< HEAD
 		    	<p><a href="${pageContext.request.contextPath}/blogHome.do?blogHost=${fri.id}"><img width="30px" height="30px" src="${ pageContext.request.contextPath }/img/b.jpg">&nbsp;${ fri.id }</a></p>
+=======
+		    	<p><a href="${pageContext.request.contextPath}/myBlog.do"><img width="30px" height="30px" src="${ pageContext.request.contextPath }/img/b.jpg">&nbsp;${ fri.id }</a></p>
+>>>>>>> origin/gs3
 		      </c:forEach>
 		    </div>
 	    </c:if>
@@ -113,7 +123,11 @@
     	</div>
     	<div style="display: inline-block; width: 65%; float: right;">
     	  <div style="height: 30%;">
+<<<<<<< HEAD
     	  	<h4><a href="${pageContext.request.contextPath}/blog/detailBoard.do?blogHost=${pop.id}&board_no=${pop.board_no}">${ pop.title }</a></h4>
+=======
+    	  	<h4>${ pop.title }</h4>
+>>>>>>> origin/gs3
     	  </div>
     	  <div style="height: 60%;">
     	    ${ pop.content }
@@ -129,7 +143,11 @@
       	<c:forEach items="${ mainRecent }" var="pre">
 	      
 	      <div class="well" align="left">
+<<<<<<< HEAD
 	        <h4><a href="${pageContext.request.contextPath}/blog/detailBoard.do?blogHost=${pre.id}&board_no=${pre.board_no}">${ pre.title }</a></h4>
+=======
+	        <h4>${ pre.title }</h4>
+>>>>>>> origin/gs3
 	        <h6>${ pre.content }</h6>
 	      </div>
 	      
@@ -143,4 +161,8 @@
 </footer>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> origin/gs3
