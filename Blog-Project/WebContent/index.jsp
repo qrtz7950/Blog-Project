@@ -88,7 +88,7 @@
 	      <h6>친구 추천</h6>
 	      	<div align="left" style="padding: 40px;">
 		      <c:forEach items="${ friend }" var="fri">
-		    	<p><a href="${pageContext.request.contextPath}/myBlog.do?blogHost=${fri.id}"><img width="30px" height="30px" src="${ pageContext.request.contextPath }/img/b.jpg">&nbsp;${ fri.id }</a></p>
+		    	<p><a href="${pageContext.request.contextPath}/blogHome.do?blogHost=${fri.id}"><img width="30px" height="30px" src="${ pageContext.request.contextPath }/img/b.jpg">&nbsp;${ fri.id }</a></p>
 		      </c:forEach>
 		    </div>
 	    </c:if>

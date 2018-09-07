@@ -105,7 +105,7 @@
               <div class="card" style="width: 18rem;">
 							<div class="card-body">
 								<c:forEach items="${ recentReplyList }" var="reply">
-									<a href="${pageContext.request.contextPath}/blog/detailBoard.do?blogHost=${param.id}&board_no=${reply.board_no}"><p class="card-text">${ reply.content }&nbsp;${ reply.reg_date }</p></a>
+									<a href="${pageContext.request.contextPath}/blog/detailBoard.do?blogHost=${param.blogHost}&board_no=${reply.board_no}"><p class="card-text">${ reply.content }&nbsp;${ reply.reg_date }</p></a>
 								</c:forEach>
 							</div>
 						</div>

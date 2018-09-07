@@ -95,7 +95,7 @@
 				<table width="100%">
 					<tr>
 						<td width="10%">
-							<form action="${pageContext.request.contextPath}/board/like.do" onsubmit="return checkLogin()" method="post">
+							<form action="${pageContext.request.contextPath}/board/like.do?blogHost=${param.blogHost}" onsubmit="return checkLogin()" method="post">
 								<input type="hidden" name="board_no" value="${detailBlogBoard.board_no}">
 								<button id="like" type="submit" class="btn btn-light btn-sm" ><img src="${ pageContext.request.contextPath }/img/like.jpg" /></button>
 							</form>
