@@ -128,6 +128,8 @@ public class MemberDAO {
 		sql.append("  where id != ?  ");
 		sql.append("  order by id_no desc ");
 		
+		List<MemberVO> friendList = selectMyFriend(me);
+		
 		try(
 				Connection conn = ConnectionFactory.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
@@ -139,9 +141,12 @@ public class MemberDAO {
 			while(rs.next()) {
 				userVO = new MemberVO();
 				userVO.setId(rs.getString("id"));
-				userVO.setPw(rs.getString("password"));
 				
-				list.add(userVO);
+				for(MemberVO fri : friendList) {
+					if(!(userVO.getId().equals(fri.getId()))) {
+						list.add(userVO);
+					}
+				}
 				
 				if(list.size() == 5) {
 					break;
@@ -156,5 +161,33 @@ public class MemberDAO {
 		return list;
 	}
 
-	
+	public List<MemberVO> selectMyFriend(MemberVO me) {
+		
+		MemberVO friendVO = null;
+		List<MemberVO> friends = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select friend from friend where id = ?");
+		
+		try(
+				Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		) {
+			
+			pstmt.setString(1, me.getId());
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				friendVO = new MemberVO();
+				friendVO.setId(rs.getString("friend"));
+				friends.add(friendVO);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return friends;
+	}
 }
