@@ -41,7 +41,7 @@ public class BoardController extends HttpServlet {
 		BoardVO popularBoard = boardservice.selectPopularBoard(blogHost);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setView("/bloghome.jsp?" + blogHost);
+		mav.setView("/bloghome.jsp");
 		mav.addAttribute("member", blogHost);
 		mav.addAttribute("recentBoard", recentBoard);
 		mav.addAttribute("presentBoard", presentBoard);
@@ -83,6 +83,8 @@ public class BoardController extends HttpServlet {
 	@RequestMapping("/write.do")
 	public ModelAndView writeProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		String blogHost = request.getParameter("blogHost");
+		
 		System.out.println("wirteProcess() 호출...");
 		
 		BoardVO board = new BoardVO();
@@ -104,7 +106,7 @@ public class BoardController extends HttpServlet {
 		service.write(board);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setView("/jsp/blog/write.jsp");
+		mav.setView("/jsp/blog/write.jsp?blogHost=" + blogHost);
 		
 		return mav;
 	}
@@ -156,14 +158,11 @@ public class BoardController extends HttpServlet {
 		ServletContext sc = request.getServletContext();
 		String category = request.getParameter("category");
 		HttpSession session = request.getSession();
-		MemberVO userVO = (MemberVO) session.getAttribute("userVO");
-		String id = null;
-		if(userVO!=null) {
-			id = userVO.getId();
-		}
+		
+		String blogHost = request.getParameter("blogHost");
 		
 		BoardService service = (BoardService) sc.getAttribute("boardService");
-		List<BoardVO> boardList = service.selectByCategory(category, id);
+		List<BoardVO> boardList = service.selectByCategory(category, blogHost);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/blogViewByCategory.jsp");
@@ -178,11 +177,12 @@ public class BoardController extends HttpServlet {
 		int board_no = Integer.parseInt(request.getParameter("board_no"));
 		ServletContext sc = request.getServletContext();
 		BoardService service = (BoardService) sc.getAttribute("boardService");
+		String blogHost = request.getParameter("blogHost");
 		
 		service.likeIt(board_no);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setView("/blog/detailBoard.do?board_no=" + board_no);
+		mav.setView("/blog/detailBoard.do?blogHost=" + blogHost + "&board_no=" + board_no);
 		
 		return mav;
 	}

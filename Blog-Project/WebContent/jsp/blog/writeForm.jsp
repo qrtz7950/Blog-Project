@@ -49,7 +49,7 @@
 		<jsp:include page="/jsp/include/topMenu.jsp" />
 		<div>
 			<br>
-			<form action="${ pageContext.request.contextPath }/write.do" id="wForm" method="post" onsubmit="return doWrite()">
+			<form action="${ pageContext.request.contextPath }/write.do?blogHost=${param.blogHost}" id="wForm" method="post" onsubmit="return doWrite()">
 				<input type="hidden" name="id" value="${sessionScope.userVO.id}">
 				<div class="container">
 					<div>
