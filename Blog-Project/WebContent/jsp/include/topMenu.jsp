@@ -28,6 +28,7 @@
 					<c:if test="${userVO.id == param.blogHost}">
 						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/blog/setting.jsp'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
 					</c:if>
+					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/index.do'">홈으로</button>
 					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>
 				</form>
 				<c:if test="${userVO.id == param.blogHost}">

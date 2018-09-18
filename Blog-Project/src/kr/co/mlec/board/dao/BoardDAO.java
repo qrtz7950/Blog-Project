@@ -415,4 +415,70 @@ public class BoardDAO {
 		
 		return recentBoardList;
 	}
+
+	public List<BoardVO> selectByRegDate(String ym, String blogHost) {
+		
+		List<BoardVO> list = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select board_no, title, to_char(reg_date ,'yyyy-mm-dd') as reg_date, view_cnt " );
+		sql.append("  from b_board ");
+		sql.append("  where to_char(reg_date, 'yyyy-mm') = ? and id = ? ");
+		sql.append("  order by board_no desc ");
+		
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			pstmt.setString(1, ym);
+			pstmt.setString(2, blogHost);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				BoardVO board = new BoardVO();
+				
+				board.setBoard_no(rs.getInt("board_no"));
+				board.setTitle(rs.getString("title"));
+				board.setReg_date(rs.getString("reg_date"));
+				board.setView_cnt(rs.getInt("view_cnt"));
+				
+				list.add(board);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public List<String> boardListYM(String id) {
+		
+		List<String> list = new ArrayList<>();
+
+		StringBuilder sql = new StringBuilder();
+		sql.append("select to_char(reg_date, 'yyyy-mm') as ym " );
+		sql.append("  from b_board ");
+		sql.append("  where id = ? ");
+		sql.append("  group by to_char(reg_date, 'yyyy-mm') ");
+		sql.append("  order by 1 desc ");
+		
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			pstmt.setString(1, id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getString("ym"));
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }

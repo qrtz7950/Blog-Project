@@ -157,7 +157,6 @@ public class BoardController extends HttpServlet {
 	public ModelAndView viewByCategory(HttpServletRequest request, HttpServletResponse response){
 		ServletContext sc = request.getServletContext();
 		String category = request.getParameter("category");
-		HttpSession session = request.getSession();
 		
 		String blogHost = request.getParameter("blogHost");
 		
@@ -168,6 +167,31 @@ public class BoardController extends HttpServlet {
 		mav.setView("/jsp/blog/blogViewByCategory.jsp");
 		mav.addAttribute("category", category);
 		mav.addAttribute("boardList", boardList);
+		
+		return mav;
+	}
+	
+	@RequestMapping("/board/blogViewByRegDate.do")
+	public ModelAndView viewByRegDate(HttpServletRequest request, HttpServletResponse response){
+		
+		ServletContext sc = request.getServletContext();
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+
+		String ym = request.getParameter("YM");
+		String blogHost = request.getParameter("blogHost");
+		
+		List<String> yyyymm = service.boardListYM(blogHost);
+		
+		System.out.println(yyyymm);
+		
+		List<BoardVO> boardList = service.selectByRegDate(ym, blogHost);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/jsp/blog/blogViewByRegDate.jsp");
+		mav.addAttribute("ym", ym);
+		mav.addAttribute("boardList", boardList);
+		
+		//String[] month = {"January","February","March","April","May","June","July","August","September","October","November","December"}; 
 		
 		return mav;
 	}

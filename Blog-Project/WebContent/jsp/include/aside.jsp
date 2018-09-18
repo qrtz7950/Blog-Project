@@ -11,21 +11,13 @@
 			</div>
 
 			<div class="p-3">
-				<h4 class="font-italic">게시물 업로드 날짜</h4>
-				<ol class="list-unstyled mb-0">
-					<li><a href="#">March 2014</a></li>
-					<li><a href="#">February 2014</a></li>
-					<li><a href="#">January 2014</a></li>
-					<li><a href="#">December 2013</a></li>
-					<li><a href="#">November 2013</a></li>
-					<li><a href="#">October 2013</a></li>
-					<li><a href="#">September 2013</a></li>
-					<li><a href="#">August 2013</a></li>
-					<li><a href="#">July 2013</a></li>
-					<li><a href="#">June 2013</a></li>
-					<li><a href="#">May 2013</a></li>
-					<li><a href="#">April 2013</a></li>
-				</ol>
+				<h4 class="font-italic">날짜별 게시글 검색</h4>
+				<form action="${pageContext.request.contextPath}/board/blogViewByRegDate.do" method="get">
+					<input type="hidden" name="blogHost" value="${param.blogHost}">
+					<input type="month" name="YM">
+					<input type="submit">
+				</form>
+				
 			</div>
 			
         

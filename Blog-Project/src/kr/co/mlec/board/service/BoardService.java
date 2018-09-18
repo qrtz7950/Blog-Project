@@ -75,4 +75,12 @@ public class BoardService {
 	public List<BoardVO> selectRecentBoardList(MemberVO blogHost) {
 		return dao.selectRecentBoardList(blogHost);
 	}
+
+	public List<BoardVO> selectByRegDate(String ym, String blogHost) {
+		return dao.selectByRegDate(ym, blogHost);
+	}
+
+	public List<String> boardListYM(String id) {
+		return dao.boardListYM(id);
+	}
 }
