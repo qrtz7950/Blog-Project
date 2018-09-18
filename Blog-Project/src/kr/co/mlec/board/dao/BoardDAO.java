@@ -353,6 +353,42 @@ public class BoardDAO {
 		return list;
 	}
 	
+	public List<BoardVO> selectByHashtag(String hashtag){
+			
+			List<BoardVO> list = new ArrayList<>();
+			
+			StringBuilder sql = new StringBuilder();
+			sql.append("select id, board_no, title, to_char(reg_date ,'yyyy-mm-dd') as reg_date, view_cnt " );
+			sql.append("  from b_board ");
+			sql.append("  where tag like ? ");
+			sql.append("  order by board_no desc ");
+			
+			try(
+				Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+			){
+				pstmt.setString(1, "%"+hashtag+"%");
+				
+				ResultSet rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					BoardVO board = new BoardVO();
+					
+					board.setId(rs.getString("id"));
+					board.setBoard_no(rs.getInt("board_no"));
+					board.setTitle(rs.getString("title"));
+					board.setReg_date(rs.getString("reg_date"));
+					board.setView_cnt(rs.getInt("view_cnt"));
+					
+					list.add(board);
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return list;
+		}
+	
 	public void likeIt(int no) {
 		
 		StringBuilder sql = new StringBuilder();

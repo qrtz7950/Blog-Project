@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,9 +106,9 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td width="30%">${hashtags[0]}</td>						
-						<td width="30%">${hashtags[1]}</td>						
-						<td width="30%">${hashtags[2]}</td>						
+						<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${fn:substring(hashtags[0], 1, fn:length(hashtags[0]))}'">${hashtags[0]}</td>						
+						<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${hashtags[1]}'">${hashtags[1]}</td>						
+						<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${hashtags[2]}'">${hashtags[2]}</td>						
 					</tr>
 				</table>
 				<hr style="border: thin solid gray;">

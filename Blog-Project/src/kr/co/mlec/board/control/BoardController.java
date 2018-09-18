@@ -171,6 +171,7 @@ public class BoardController extends HttpServlet {
 		return mav;
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping("/board/blogViewByRegDate.do")
 	public ModelAndView viewByRegDate(HttpServletRequest request, HttpServletResponse response){
 		
@@ -193,6 +194,24 @@ public class BoardController extends HttpServlet {
 		
 		//String[] month = {"January","February","March","April","May","June","July","August","September","October","November","December"}; 
 		
+=======
+	@RequestMapping("/board/blogViewByHashtag.do")
+	public ModelAndView viewByHashtag(HttpServletRequest request, HttpServletResponse response){
+		ServletContext sc = request.getServletContext();
+		String hashtag = request.getParameter("hashtag");
+		
+		String blogHost = request.getParameter("blogHost");
+		
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		System.out.println(hashtag);
+		List<BoardVO> boardList = service.selectByHashtag(hashtag);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/jsp/blog/blogViewByHashtag.jsp");
+		mav.addAttribute("hashtag", hashtag);
+		mav.addAttribute("boardList", boardList);
+		
+>>>>>>> origin/Ddock2
 		return mav;
 	}
 	

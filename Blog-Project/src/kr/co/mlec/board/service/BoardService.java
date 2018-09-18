@@ -68,6 +68,10 @@ public class BoardService {
 		return dao.selectByCategory(category, id);
 	}
 	
+	public List<BoardVO> selectByHashtag(String hashtag){
+		return dao.selectByHashtag(hashtag);
+	}
+	
 	public void likeIt(int no) {
 		dao.likeIt(no);
 	}
