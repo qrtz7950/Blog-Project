@@ -171,6 +171,25 @@ public class BoardController extends HttpServlet {
 		return mav;
 	}
 	
+	@RequestMapping("/board/blogViewByHashtag.do")
+	public ModelAndView viewByHashtag(HttpServletRequest request, HttpServletResponse response){
+		ServletContext sc = request.getServletContext();
+		String hashtag = request.getParameter("hashtag");
+		
+		String blogHost = request.getParameter("blogHost");
+		
+		BoardService service = (BoardService) sc.getAttribute("boardService");
+		System.out.println(hashtag);
+		List<BoardVO> boardList = service.selectByHashtag(hashtag);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setView("/jsp/blog/blogViewByHashtag.jsp");
+		mav.addAttribute("hashtag", hashtag);
+		mav.addAttribute("boardList", boardList);
+		
+		return mav;
+	}
+	
 	@RequestMapping("/board/like.do")
 	public ModelAndView like(HttpServletRequest request, HttpServletResponse response) {
 		int board_no = Integer.parseInt(request.getParameter("board_no"));
