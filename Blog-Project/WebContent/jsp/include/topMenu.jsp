@@ -7,6 +7,27 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script type="text/javascript">
+	
+		var myId = '${userVO.id}';
+		var friendId = '${param.blogHost}';
+		
+		console.log(myId,friendId)
+		
+		function firendRequest() {
+			if(myId == ''){
+				alert('로그인이 필요한 서비스 입니다');
+			} else {
+				var bool = confirm(friendId + " 님에게 친구 신청을 보냅니다");
+				if(bool){
+					location.href = "${pageContext.request.contextPath}/friend/friendPlus.do?friendId=" + friendId + "&myId=" + myId;
+				} else{
+					alert("친구신청을 취소하였습니다.");
+				}
+			}
+		}
+
+	</script>
 </head>
  
 <div align="center">
@@ -35,7 +56,8 @@
 					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/writeForm.do?blogHost=${param.blogHost}'" style="margin-top: 10px; margin-bottom: 10px">글쓰기</button>
 				</c:if>
 				<c:if test="${userVO.id != param.blogHost}">
-					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/friend/friendPlus.jsp'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
+					<%-- <button type="button" id="firendReq" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/jsp/friend/friendPlus.jsp'" style="margin-top: 10px; margin-bottom: 10px">친구신청</button> --%>
+					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="firendRequest()" style="margin-top: 10px; margin-bottom: 10px">친구신청</button>
 				</c:if>
 			</c:otherwise>
 		</c:choose>

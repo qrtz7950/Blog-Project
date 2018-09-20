@@ -10,7 +10,14 @@ public class FriendService {
 	public FriendService(FriendDAO dao) {
 		this.dao = dao;
 	}
-	public FriendVO friendPlus(FriendVO friendVO) {
-		return dao.friendPlus(friendVO);
+	public boolean friendPlus(FriendVO friendVO) {
+		boolean friendReqOverlapCheck = dao.friendReqOverlapCheck(friendVO);
+		
+		if(friendReqOverlapCheck) {
+			return true;
+		} else {
+			dao.friendPlus(friendVO);
+			return false;
+		}
 	}
 }

@@ -20,23 +20,35 @@ public class FriendController {
 		
 		System.out.println("friendPlus() 메소드 호출...");
 		
-		String target_id = request.getParameter("target_id");
-		
 		HttpSession session = request.getSession();
 		MemberVO me = (MemberVO)session.getAttribute("userVO");
 		
-		FriendVO friendVO = new FriendVO(target_id, me.getId());
+		String target_id = request.getParameter("friendId");
+		String req_id = me.getId();
+		
+		FriendVO friendVO = new FriendVO(target_id, req_id);
 		
 		ServletContext sc = request.getServletContext();
-		FriendService service = (FriendService)sc.getAttribute("friendService");
-		service.friendPlus(friendVO);
+		FriendService friService = (FriendService)sc.getAttribute("friendService");
 		
-		System.out.println(target_id);
-		System.out.println(me.getId());
+		boolean friendOverlapCheck = friService.friendPlus(friendVO);
 		
-		ModelAndView mav = new ModelAndView("/jsp/friend/friendPlus.jsp");
+		ModelAndView mav = new ModelAndView();
 		
-		return mav;
+		if(friendOverlapCheck) {
+
+			mav.addAttribute("msg", "이미 친구 신청한 사용자입니다");
+			mav.setView("/jsp/friend/friendPlus.jsp");
+			
+			return mav;
+			
+		} else {
+			
+			mav.addAttribute("msg", "친구 신청 되었습니다");
+			mav.setView("/jsp/friend/friendPlus.jsp");
+			
+			return mav;
+		}
 	}
 	
 }

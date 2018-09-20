@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebListener;
 
 import kr.co.mlec.board.dao.BoardDAO;
 import kr.co.mlec.board.service.BoardService;
+import kr.co.mlec.friend.dao.FriendDAO;
+import kr.co.mlec.friend.service.FriendService;
 import kr.co.mlec.member.dao.MemberDAO;
 import kr.co.mlec.member.service.MemberService;
 import kr.co.mlec.reply.dao.ReplyDAO;
@@ -43,6 +45,9 @@ public class ContextListener implements ServletContextListener {
     	
     	ReplyDAO replyDao = new ReplyDAO();
     	sc.setAttribute("replyService", new ReplyService(replyDao));
+    	
+    	FriendDAO friDao = new FriendDAO();
+    	sc.setAttribute("friendService", new FriendService(friDao));
     }
 	
 }
