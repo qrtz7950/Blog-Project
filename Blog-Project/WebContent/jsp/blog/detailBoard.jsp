@@ -106,9 +106,22 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${fn:substring(hashtags[0], 1, fn:length(hashtags[0]))}'">${hashtags[0]}</td>						
-						<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${hashtags[1]}'">${hashtags[1]}</td>						
-						<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${hashtags[2]}'">${hashtags[2]}</td>						
+						<c:if test="${not empty hashtags}">
+							<c:if test="${not empty hashtags[0]}">
+								<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${fn:substring(hashtags[0], 1, fn:length(hashtags[0]))}'">${hashtags[0]}</td>						
+							</c:if>
+							<c:if test="${empty hashtags[0]}"><td></td></c:if>
+							
+							<c:if test="${not empty hashtags[1]}">
+								<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${fn:substring(hashtags[1], 1, fn:length(hashtags[1]))}'">${hashtags[1]}</td>						
+							</c:if>
+							<c:if test="${empty hashtags[1]}"><td></td></c:if>
+							
+							<c:if test="${not empty hashtags[2]}">
+								<td width="30%" onclick="location.href='${pageContext.request.contextPath}/board/blogViewByHashtag.do?blogHost=${param.blogHost}&hashtag=${fn:substring(hashtags[2], 1, fn:length(hashtags[2]))}'">${hashtags[2]}</td>						
+							</c:if>
+							<c:if test="${empty hashtags[2]}"><td></td></c:if>
+						</c:if>
 					</tr>
 				</table>
 				<hr style="border: thin solid gray;">

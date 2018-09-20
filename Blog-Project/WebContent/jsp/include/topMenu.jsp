@@ -75,7 +75,7 @@
 	    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 	      <c:forEach var="category" items="${categoryList}" varStatus="status">
 		      <c:if test="${status.count > 3}">
-		      	<a class="dropdown-item" href="${pageContext.request.contextPath}/board/blogViewByCategory.do?category=${category}">${category}</a>
+		      	<a class="dropdown-item" href="${pageContext.request.contextPath}/board/blogViewByCategory.do?blogHost=${param.blogHost}&category=${category}">${category}</a>
 		      </c:if>
 		  </c:forEach>
 	    </div>
