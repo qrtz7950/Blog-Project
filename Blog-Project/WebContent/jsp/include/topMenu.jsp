@@ -47,7 +47,7 @@
 					<input type="hidden" name="blogID" value="${ userVO.id }">
 					<input type="submit" value="내 블로그" class="btn btn-outline-secondary btn-sm">
 					<c:if test="${userVO.id == param.blogHost}">
-						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/blogSetting.do'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
+						<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/blogSetting.do?blogHost=${param.blogHost}'" style="margin-top: 10px; margin-bottom: 10px">블로그 설정</button>
 					</c:if>
 					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/index.do'">홈으로</button>
 					<button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='${pageContext.request.contextPath}/login/logout.do'">로그아웃</button>

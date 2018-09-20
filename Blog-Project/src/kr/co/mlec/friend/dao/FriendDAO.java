@@ -78,7 +78,7 @@ public class FriendDAO {
 		StringBuilder sql = new StringBuilder();
 		sql.append("select target_id, req_id, req_no, to_char(reg_date ,'yyyy-mm-dd') as reg_date " );
 		sql.append(" from friend_req ");
-		sql.append(" where req_id = ? ");
+		sql.append(" where target_id = ? ");
 		
 		try(
 			Connection conn = ConnectionFactory.getConnection();
@@ -91,6 +91,7 @@ public class FriendDAO {
 			
 			while(rs.next()){
 				FriendVO f = new FriendVO();
+				f.setReq_id(rs.getString("req_id"));
 				f.setTarget_id(rs.getString("target_id"));
 				f.setReq_no(rs.getString("req_no"));
 				f.setReg_date(rs.getString("reg_date"));

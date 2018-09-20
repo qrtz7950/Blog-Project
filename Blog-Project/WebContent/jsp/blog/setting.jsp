@@ -8,11 +8,11 @@
 	.sel{
 		display: inline-block;
 	}
-	.firendReq{
+	.friendReq{
 		display: inline-block;
 		font-size: 15pt;
 	}	
-	.firendSel{
+	.friendSel{
 		font-size: 15pt;
 		margin: 5px;
 	}	
@@ -32,7 +32,7 @@
 	          <h4>친구 신청 현황</h4><br>
 	          <c:choose>
 	          	<c:when test="${ empty friList }">
-	          		<div class="firendSel">
+	          		<div class="friendSel">
 	          			새로운 친구 신청이 없습니다
 	          		</div>
 	          	</c:when>
@@ -40,9 +40,9 @@
 	          		<div class="container" style="background: lightgray; width:50%;">
 			            <c:forEach var="fri" items="${friList}">
 			            <div>
-				            <div class="firendSel">
-								<div class="firendReq"><b>${fri.target_id}</b>님이</div>
-								<div class="firendReq">나에게 친구 신청하였습니다</div>
+				            <div class="friendSel">
+								<div class="friendReq"><b>${fri.req_id}</b>님이</div>
+								<div class="friendReq">나에게 친구 신청하였습니다</div>
 							</div>
 								<div>
 									<button type="button" id="Y${fri.req_no}" class="btn btn-success">수락</button>

@@ -121,10 +121,6 @@
 				    </tr>
 				 </c:forEach>
 			</table>
-<<<<<<< HEAD
-=======
-          
->>>>>>> origin/Ddock2
 
         </div><!-- /.blog-main -->
 
@@ -148,20 +144,10 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> 
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
 	    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>                                                                                        
-<<<<<<< HEAD
-	    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>                                                                                                                                                                                                                                                  
-=======
 	    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>                                                                                                                               
->>>>>>> origin/Ddock2
 		<script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>                                                                                                                            
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>                                                                                                                  
-		
-<<<<<<< HEAD
-   <!--  <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"/></script> -->
-=======
-
->>>>>>> origin/Ddock2
     <script>
       /* Holder.addTheme('thumb', {
         bg: '#55595c',
