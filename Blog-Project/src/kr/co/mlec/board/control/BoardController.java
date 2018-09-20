@@ -131,17 +131,19 @@ public class BoardController extends HttpServlet {
 		BoardVO detailBlogBoard = service.selectDetailBoardByNo(board_no, userVO);
 		
 		// 해시태그정리
-		List<String> tags = new ArrayList<String>(Arrays.asList(detailBlogBoard.getTag().split("#")));
-		tags.remove(0);
-		for(int i=0; i<tags.size(); i++) {
-			tags.set(i, "#" + tags.get(i));
-			System.out.println(tags.get(i));
+		List<String> tags = null;
+		if(detailBlogBoard.getTag() != null) {
+			tags = new ArrayList<String>(Arrays.asList(detailBlogBoard.getTag().split("#")));
+			tags.remove(0);
+			for(int i=0; i<tags.size(); i++) {
+				tags.set(i, "#" + tags.get(i));
+				System.out.println(tags.get(i));
+			}
 		}
 		
 		// 댓글 정보 가져오기
 		ReplyService replyService = (ReplyService) sc.getAttribute("replyService");
-		List<ReplyVO> replyList = replyService.selectReplyByBoardNo(board_no);
-		
+		List<ReplyVO> replyList = replyService.selectReplyByBoardNo(board_no);		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/detailBoard.jsp");
@@ -163,10 +165,32 @@ public class BoardController extends HttpServlet {
 		BoardService service = (BoardService) sc.getAttribute("boardService");
 		List<BoardVO> boardList = service.selectByCategory(category, blogHost);
 		
+		int totalPage = 0;
+		int numPerPage = 10;
+		
+		int totalRecord = boardList.size();
+		
+		if(totalRecord != 0) {
+			if(totalRecord % numPerPage == 0) {
+				totalPage = totalRecord / numPerPage;
+			} else {
+				totalPage = totalRecord / numPerPage + 1;
+			}
+		}
+		
+		int curPage = 1;
+		if(request.getParameter("curPage") != null) {
+			if(Integer.parseInt(request.getParameter("curPage")) <= totalPage) {
+				curPage = Integer.parseInt(request.getParameter("curPage"));
+			}
+		}
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/blogViewByCategory.jsp");
 		mav.addAttribute("category", category);
 		mav.addAttribute("boardList", boardList);
+		mav.addAttribute("totalPage", totalPage);
+		mav.addAttribute("curPage", curPage);
 		
 		return mav;
 	}
@@ -186,10 +210,32 @@ public class BoardController extends HttpServlet {
 		
 		List<BoardVO> boardList = service.selectByRegDate(ym, blogHost);
 		
+		int totalPage = 0;
+		int numPerPage = 10;
+		
+		int totalRecord = boardList.size();
+		
+		if(totalRecord != 0) {
+			if(totalRecord % numPerPage == 0) {
+				totalPage = totalRecord / numPerPage;
+			} else {
+				totalPage = totalRecord / numPerPage + 1;
+			}
+		}
+		
+		int curPage = 1;
+		if(request.getParameter("curPage") != null) {
+			if(Integer.parseInt(request.getParameter("curPage")) <= totalPage) {
+				curPage = Integer.parseInt(request.getParameter("curPage"));
+			}
+		}
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/blogViewByRegDate.jsp");
 		mav.addAttribute("ym", ym);
 		mav.addAttribute("boardList", boardList);
+		mav.addAttribute("totalPage", totalPage);
+		mav.addAttribute("curPage", curPage);
 		
 		//String[] month = {"January","February","March","April","May","June","July","August","September","October","November","December"}; 
 		
@@ -207,10 +253,32 @@ public class BoardController extends HttpServlet {
 		System.out.println(hashtag);
 		List<BoardVO> boardList = service.selectByHashtag(hashtag);
 		
+		int totalPage = 0;
+		int numPerPage = 10;
+		
+		int totalRecord = boardList.size();
+		
+		if(totalRecord != 0) {
+			if(totalRecord % numPerPage == 0) {
+				totalPage = totalRecord / numPerPage;
+			} else {
+				totalPage = totalRecord / numPerPage + 1;
+			}
+		}
+		
+		int curPage = 1;
+		if(request.getParameter("curPage") != null) {
+			if(Integer.parseInt(request.getParameter("curPage")) <= totalPage) {
+				curPage = Integer.parseInt(request.getParameter("curPage"));
+			}
+		}
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setView("/jsp/blog/blogViewByHashtag.jsp");
 		mav.addAttribute("hashtag", hashtag);
 		mav.addAttribute("boardList", boardList);
+		mav.addAttribute("totalPage", totalPage);
+		mav.addAttribute("curPage", curPage);
 		
 		return mav;
 	}

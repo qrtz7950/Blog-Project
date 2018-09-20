@@ -55,15 +55,40 @@ table.type11 tr:hover{
 				        <th width="15%">등록일</th>
 				        <th width="15%">조회수</th>
 				    </tr>
-				    <c:forEach var="board" items="${boardList}">
-					    <tr>
-					        <td onclick="location.href='${pageContext.request.contextPath}/blog/detailBoard.do?blogHost=${param.blogHost}&board_no=${board.board_no}'">${board.title}</th>
-					        <td>${board.reg_date}</td>
-					        <td>${board.view_cnt}</td>
-					    </tr>
-					 </c:forEach>
+					<c:forEach var="board" items="${boardList}" varStatus="status">
+				    	<c:if test="${status.index/10 >= curPage-1 && status.index/10 < curPage}">
+						    <tr>
+						        <td onclick="location.href='${pageContext.request.contextPath}/blog/detailBoard.do?blogHost=${param.blogHost}&board_no=${board.board_no}'">${board.title}</th>
+						        <td>${board.reg_date}</td>
+						        <td>${board.view_cnt}</td>
+						    </tr>
+						</c:if>
+					</c:forEach>
 				</table>
 				<hr style="border: thin solid gray;">
+				
+				<div align="center">
+					<c:choose>
+						<c:when test="${curPage<10}">
+							<c:forEach var="i" begin="1" end="${totalPage}">
+								<a href="${pageContext.request.contextPath}/board/blogViewByRegDate.do?blogHost=${param.blogHost}&YM=${param.YM}&curPage=${i}">${i}</a>
+								&nbsp;
+							</c:forEach>
+						</c:when>
+						<c:when test="${curPage+10>totalPage}">
+							<c:forEach var="i" begin="${totalPage-9}" end="${totalPage}">
+								<a href="${pageContext.request.contextPath}/board/blogViewByRegDate.do?blogHost=${param.blogHost}&YM=${param.YM}&curPage=${i}">${i}</a>
+								&nbsp;
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<c:forEach var="i" begin="${curPage-5}" end="${curPage+5}">
+								<a href="${pageContext.request.contextPath}/board/blogViewByRegDate.do?blogHost=${param.blogHost}&YM=${param.YM}&curPage=${i}">${i}</a>
+								&nbsp;
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
+				</div>
 				
 			</div>
 			<jsp:include page="/jsp/include/aside.jsp" />
