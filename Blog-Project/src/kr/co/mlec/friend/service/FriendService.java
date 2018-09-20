@@ -1,7 +1,10 @@
 package kr.co.mlec.friend.service;
 
+import java.util.List;
+
 import kr.co.mlec.friend.dao.FriendDAO;
 import kr.co.mlec.friend.vo.FriendVO;
+import kr.co.mlec.member.vo.MemberVO;
 
 public class FriendService {
 
@@ -19,5 +22,8 @@ public class FriendService {
 			dao.friendPlus(friendVO);
 			return false;
 		}
+	}
+	public List<FriendVO> getReqFriendList(String id) {
+		return dao.getReqFriendList(id);
 	}
 }

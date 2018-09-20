@@ -12,8 +12,11 @@ import kr.co.mlec.board.vo.BoardVO;
 import kr.co.mlec.framework.ModelAndView;
 import kr.co.mlec.framework.annotation.Controller;
 import kr.co.mlec.framework.annotation.RequestMapping;
+import kr.co.mlec.friend.service.FriendService;
+import kr.co.mlec.friend.vo.FriendVO;
 import kr.co.mlec.member.service.MemberService;
 import kr.co.mlec.member.vo.MemberVO;
+
 
 @Controller
 public class BlogController {
@@ -23,8 +26,6 @@ public class BlogController {
 		
 		List<MemberVO> friend = null;
 		
-		System.out.println("메인홈페이지다");
-
 		ServletContext sc = request.getServletContext();
 		BoardService boardService = (BoardService) sc.getAttribute("boardService");
 		MemberService memberService = (MemberService) sc.getAttribute("memberService");
@@ -32,10 +33,7 @@ public class BlogController {
 		HttpSession session = request.getSession();
 		MemberVO me =  (MemberVO) session.getAttribute("userVO");
 		
-		System.out.println("blogController 안에서 세션정보 찍기 : \n" + me);
-		
 		if(me != null) {
-			System.out.println("진입?");
 			friend = memberService.selectFriend(me);
 		}
 		List<BoardVO> mainPopular = boardService.selectPopularBoard(); 
@@ -49,4 +47,28 @@ public class BlogController {
 		
 		return mav;
 	}
+	
+	@RequestMapping("/blogSetting.do")
+	public ModelAndView blogSetting(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		HttpSession session = request.getSession();
+		MemberVO me = (MemberVO) session.getAttribute("userVO");
+		
+		ServletContext sc = request.getServletContext();
+		FriendService friservice = (FriendService) sc.getAttribute("friendService");
+		
+		List<FriendVO> friList = friservice.getReqFriendList(me.getId());
+		
+		System.out.println("blogSetting() 호출");
+		System.out.println(friList);
+		
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addAttribute("friList", friList);
+		mav.setView("/jsp/blog/setting.jsp");
+
+		return mav;
+	}
+		
+	
 }

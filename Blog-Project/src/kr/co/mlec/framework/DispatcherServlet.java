@@ -1,6 +1,7 @@
 package kr.co.mlec.framework;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Set;
@@ -80,13 +81,12 @@ public class DispatcherServlet extends HttpServlet {
 			view = mav.getView();
 			
 		} catch (Exception e) {
-//			e.printStackTrace();
+			e.printStackTrace();
 			request.setAttribute("exception", e);
 			System.out.println(e);
 			view = "/jsp/error/error.jsp";
 //			view = "/error";
 		}
-		
 		
 		// 2. 해당 jsp로 이동
 		if(view.startsWith("redirect:")) {

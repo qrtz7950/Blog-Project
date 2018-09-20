@@ -3,6 +3,8 @@ package kr.co.mlec.friend.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import kr.co.mlec.board.vo.BoardVO;
 import kr.co.mlec.friend.vo.FriendVO;
@@ -67,5 +69,39 @@ public class FriendDAO {
 		}
 
 		return friendReqOverlapCheck;
+	}
+
+	public List<FriendVO> getReqFriendList(String id) {
+
+		List<FriendVO> friList = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("select target_id, req_id, req_no, to_char(reg_date ,'yyyy-mm-dd') as reg_date " );
+		sql.append(" from friend_req ");
+		sql.append(" where req_id = ? ");
+		
+		try(
+			Connection conn = ConnectionFactory.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		){
+			
+			pstmt.setString(1, id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				FriendVO f = new FriendVO();
+				f.setTarget_id(rs.getString("target_id"));
+				f.setReq_no(rs.getString("req_no"));
+				f.setReg_date(rs.getString("reg_date"));
+				
+				friList.add(f);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		return friList;
 	}
 }

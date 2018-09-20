@@ -46,8 +46,8 @@ public class ContextListener implements ServletContextListener {
     	ReplyDAO replyDao = new ReplyDAO();
     	sc.setAttribute("replyService", new ReplyService(replyDao));
     	
-    	FriendDAO friDao = new FriendDAO();
-    	sc.setAttribute("friendService", new FriendService(friDao));
+    	FriendDAO friendDao = new FriendDAO();
+    	sc.setAttribute("friendService", new FriendService(friendDao));
     }
 	
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,20 +30,29 @@
 		
 	      <section class="jumbotron text-center">
 	          <h4>친구 신청 현황</h4><br>
-	          	<div class="firendSel">
-	          		새로운 친구 신청이 없습니다
-	          	</div>
+	          <c:choose>
+	          	<c:when test="${ empty friList }">
+	          		<div class="firendSel">
+	          			새로운 친구 신청이 없습니다
+	          		</div>
+	          	</c:when>
+	          	<c:otherwise>
 	          		<div class="container" style="background: lightgray; width:50%;">
+			            <c:forEach var="fri" items="${friList}">
 			            <div>
 				            <div class="firendSel">
-								<div class="firendReq"><b>김제희</b>님이</div>
-								<div class="firendReq"><b>곽병문</b>님에게 친구 신청하였습니다</div>
+								<div class="firendReq"><b>${fri.target_id}</b>님이</div>
+								<div class="firendReq">나에게 친구 신청하였습니다</div>
 							</div>
 								<div>
-									<button type="button" class="btn btn-success">수락</button>
-									<button type="button" class="btn btn-danger">거절</button>
+									<button type="button" id="Y${fri.req_no}" class="btn btn-success">수락</button>
+									<button type="button" id="N${fri.req_no}" class="btn btn-danger">거절</button>
 								</div>
 						</div>
+						</c:forEach>
+					</div>			
+	          	</c:otherwise>
+	          </c:choose>
 	      </section>
 	
 			<section class="jumbotron text-center">

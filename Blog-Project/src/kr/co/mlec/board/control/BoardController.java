@@ -55,9 +55,6 @@ public class BoardController extends HttpServlet {
 //		System.out.println(presentBoard);
 //		System.out.println("인기글\n");
 //		System.out.println(popularBoard);
-		System.out.println("메인뷰");
-		System.out.println(recentReplyList);
-		
 		return mav;
 	}
 	
